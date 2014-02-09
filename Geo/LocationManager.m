@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong, readwrite) CLLocationManager *locationManager;
 
-@property (nonatomic, assign, readwrite) NSTimer *timer;
+@property (nonatomic, unsafe_unretained, readwrite) NSTimer *timer;
 @property (nonatomic, assign, readwrite) BOOL isNewCoordinate;
 @end
 
@@ -35,7 +35,7 @@ static LocationManager *sharedInstance = nil;
 - (id)init {
 	self = [super init];
 	if (self != nil) {
-        self.locationManager = [[[CLLocationManager alloc] init] autorelease];
+        self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
         self.locationManager.distanceFilter = 100; // 0,1 kilometer
         self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
@@ -49,14 +49,6 @@ static LocationManager *sharedInstance = nil;
 	}
 	return self;
 }
-
-- (void)dealloc {
-    self.timer = nil;
-    [self.locationManager stopUpdatingLocation];
-    self.locationManager = nil;
-    [super dealloc];
-}
-
 
 - (CLLocationCoordinate2D)currentIphoneLoacationCordinate {
     return self.currentLocationCoordinate;

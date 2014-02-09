@@ -1,7 +1,6 @@
 //
 //  Log.h
-//  VisitNordsjaelland
-//
+//  iOSTools
 //  Created by Alexandr Kurochkin on 5/10/12.
 //  Copyright (c) 2012 OneClickDev. All rights reserved.
 //

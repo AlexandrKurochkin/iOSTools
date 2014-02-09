@@ -1,6 +1,6 @@
 //
 //  NSObject+Additional.m
-//  WheniniOS
+//  iOSTools
 //
 //  Created by Alex Kurochkin on 7/24/13.
 //  Copyright (c) 2013 Alex Kurochkin. All rights reserved.

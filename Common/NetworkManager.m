@@ -1,6 +1,6 @@
 //
 //  NetworkManager.m
-//
+//  iOSTools
 //  Created by Alexandr Kurochkin on 6/12/12.
 //  Copyright (c) 2012 OneClickDev. All rights reserved.
 //

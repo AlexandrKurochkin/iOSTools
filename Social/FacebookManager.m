@@ -55,7 +55,6 @@ static FacebookManager *sharedInstance = nil;
 - (void)dealloc {
     self.parametrs = nil;
     self.session = nil;
-    [super dealloc];
 }
 
 #pragma mark - Facebook life cicle
@@ -90,7 +89,9 @@ handlingRequestSuccessSelector:(SEL)requestSuccessSelector
                                       NSLog(@"s2: %@",session);
                                       if (error != nil) {
                                           if (sender && requestErrorSelector) {
+                                              SuppressPerformSelectorLeakWarning(
                                               [sender performSelector:requestErrorSelector withObject:error];
+                                            );
                                           }
                                       } else {
                                           [self getUserDataForSender:sender handlingRequestSuccessSelector:requestSuccessSelector handlingRequestErrorSelector:requestErrorSelector];
@@ -108,12 +109,16 @@ handlingRequestSuccessSelector:(SEL)requestSuccessSelector
                               if (error != nil) {
                                   [error print];
                                   if (sender && requestErrorSelector) {
+                                      SuppressPerformSelectorLeakWarning(
                                       [sender performSelector:requestErrorSelector withObject:error];
+                                                                         );
                                   }
                               } else {
                                   NSLog(@"userInfo: %@", user);
                                   if (sender && requestSuccessSelector) {
+                                      SuppressPerformSelectorLeakWarning(
                                       [sender performSelector:requestSuccessSelector withObject:user];
+                                                                         );
                                   }
                               }
                               

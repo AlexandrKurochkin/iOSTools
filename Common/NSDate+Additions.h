@@ -1,6 +1,6 @@
 //
 //  NSDate+Additions.h
-//  WheniniOS
+//  iOSTools
 //
 //  Created by Alex Kurochkin on 9/9/13.
 //  Copyright (c) 2013 Alex Kurochkin. All rights reserved.

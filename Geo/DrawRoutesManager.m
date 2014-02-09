@@ -45,7 +45,7 @@ static DrawRoutesManager *sharedInstance = nil;
     self.fillColor = nil;
     self.strokeColor = nil;
     self.arrayPoints = nil;
-    [super dealloc];
+
 }
 
 
@@ -53,13 +53,28 @@ static DrawRoutesManager *sharedInstance = nil;
 #pragma mark - interface
 #pragma mark -
 
-- (MKPolylineView *)routePolylineView {
-    MKPolylineView *view = [[[MKPolylineView alloc] initWithPolyline:self.objPolyline] autorelease];
+
+
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_7_0
+- (MKPolylineRenderer *)routePolylineView {
+    
+    MKPolylineRenderer *view = [[MKPolylineRenderer alloc] initWithPolyline:self.objPolyline];
     view.fillColor = (self.fillColor) ? self.fillColor : [UIColor blueColor];
     view.strokeColor = (self.strokeColor) ? self.strokeColor : [UIColor blueColor];
     view.lineWidth = (width > 0) ? width : 4;
     return view;
 }
+#else
+- (MKPolylineView *)routePolylineView {
+    
+    MKPolylineView *view = [[MKPolylineView alloc] initWithPolyline:self.objPolyline];
+    view.fillColor = (self.fillColor) ? self.fillColor : [UIColor blueColor];
+    view.strokeColor = (self.strokeColor) ? self.strokeColor : [UIColor blueColor];
+    view.lineWidth = (width > 0) ? width : 4;
+    return view;
+}
+#endif
+
 
 - (void)drawRoutFromPoint:(CLLocationCoordinate2D)origin to:(CLLocationCoordinate2D)destination onMapView:(MKMapView *)mapView {
     if ([self.arrayPoints count] < 1 ||
@@ -144,7 +159,6 @@ static DrawRoutesManager *sharedInstance = nil;
         
         CLLocation *loc = [[CLLocation alloc] initWithLatitude:(lat * 1e-5) longitude:(lng * 1e-5)];
         [array addObject:loc];
-        [loc release];
     }
     return array;
 }

@@ -1,6 +1,6 @@
 //
 //  NSDate+Additions.m
-//  WheniniOS
+//  iOSTools
 //
 //  Created by Alex Kurochkin on 9/9/13.
 //  Copyright (c) 2013 Alex Kurochkin. All rights reserved.
@@ -11,7 +11,7 @@
 @implementation NSDate (Additions)
 
 + (NSDate *)dateOfBirthOfMinimalValidateAge:(NSInteger)minAge {
-    NSCalendar * gregorian = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
+    NSCalendar * gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
     
     NSDateComponents * components = [gregorian components:unitFlags fromDate:[NSDate date]];
@@ -21,7 +21,7 @@
 
 - (BOOL)isValideForMinAge:(NSInteger)minAge {
     
-    NSCalendar * gregorian = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
+    NSCalendar * gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] ;
     unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
     
     NSDateComponents * components = [gregorian components:unitFlags fromDate:[NSDate date]];
@@ -35,7 +35,6 @@
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:format];
     NSDate *date = [dateFormat dateFromString:dateString];
-    [dateFormat release];
     return date;
 }
 
@@ -43,7 +42,6 @@
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:format];
     NSString *dateStr = [dateFormat stringFromDate:self];
-    [dateFormat release];
     return dateStr;
 }
 

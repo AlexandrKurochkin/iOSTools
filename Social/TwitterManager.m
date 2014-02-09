@@ -48,7 +48,7 @@
 }
 
 + (void)postImage:(UIImage *)image withStatus:(NSString *)status {
-    ACAccountStore *accountStoreTw = [[[ACAccountStore alloc] init] autorelease];
+    ACAccountStore *accountStoreTw = [[ACAccountStore alloc] init];
     ACAccountType *twitterType = [accountStoreTw accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     
     SLRequestHandler requestHandler =

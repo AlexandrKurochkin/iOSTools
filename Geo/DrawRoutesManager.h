@@ -22,8 +22,13 @@
 
 - (void)drawRoutFromPoint:(CLLocationCoordinate2D)origin to:(CLLocationCoordinate2D)destination onMapView:(MKMapView *)mapView;
 - (void)centerMapView:(MKMapView *)mapView;
-- (MKPolylineView *)routePolylineView;
 - (double)metrsOfCurrentDistanceFrom:(CLLocationCoordinate2D)origin to:(CLLocationCoordinate2D)destination;
+
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_7_0
+- (MKPolylineRenderer *)routePolylineView;
+#else
+- (MKPolylineView *)routePolylineView;
+#endif
 
 
 @end

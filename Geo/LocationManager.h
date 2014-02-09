@@ -15,7 +15,7 @@
 @private
     CLLocationManager *_locationManager;
     CLLocationCoordinate2D _currentLocationCoordinate;
-    NSTimer *_timer;
+    __unsafe_unretained NSTimer  *_timer;
     BOOL _isNewCoordinate;
 }
 
