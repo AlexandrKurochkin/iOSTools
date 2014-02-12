@@ -13,6 +13,8 @@
 + (NSDate *)dateOfBirthOfMinimalValidateAge:(NSInteger)minAge;
 + (NSDate *)dateFromString:(NSString *)dateString format:(NSString *)format;
 
+
+
 - (NSString *)dateStringForFormat:(NSString *)format;
 - (BOOL)isValideForMinAge:(NSInteger)minAge;
 
