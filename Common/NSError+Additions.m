@@ -11,7 +11,7 @@
 @implementation NSError (Additions)
 
 - (void)print {
-    NSLog(@"error code: %d", [self code]);
+    NSLog(@"error code: %ld", (long)[self code]);
     NSLog(@"error domain: %@", [self domain]);
     NSLog(@"error userInfo: %@", [self userInfo]);
 }

@@ -66,7 +66,7 @@
                 alertText = @"Tweeted success";
             }
             else {
-                alertText = [NSString stringWithFormat:@"[ERROR] Server responded: status code %d %@", statusCode,
+                alertText = [NSString stringWithFormat:@"[ERROR] Server responded: status code %ld %@", (long)statusCode,
                              [NSHTTPURLResponse localizedStringForStatusCode:statusCode]];
                 NSLog(@"%@", alertText);
             }

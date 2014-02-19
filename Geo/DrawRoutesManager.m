@@ -195,7 +195,7 @@ static DrawRoutesManager *sharedInstance = nil;
 
 - (void)drawRoute:(NSArray *)arrRoutePoints onTheMapView:(MKMapView *)mapView {
     
-    int numPoints = [arrRoutePoints count];
+    NSUInteger numPoints = [arrRoutePoints count];
     if (numPoints > 1) {
         CLLocationCoordinate2D* coords = malloc(numPoints * sizeof(CLLocationCoordinate2D));
         for (int i = 0; i < numPoints; i++) {

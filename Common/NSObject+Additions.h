@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #define DEALLOC - (void)dealloc { [self clean];[super dealloc];}
+#define ARC_DEALLOC - (void)dealloc { [self clean];}
 
 @interface NSObject (Additions)
 

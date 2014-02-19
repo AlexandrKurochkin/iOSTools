@@ -170,8 +170,8 @@ handlingRequestSuccessSelector:(SEL)requestSuccessSelector
          NSString *alertText;
          if (error) {
              alertText = [NSString stringWithFormat:
-                          @"error: domain = %@, code = %d",
-                          error.domain, error.code];
+                          @"error: domain = %@, code = %ld",
+                          error.domain, (long)error.code];
          } else {
              alertText = @"Success";
              NSLog(@"Posted action, id: %@",
