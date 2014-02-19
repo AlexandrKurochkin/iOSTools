@@ -1,5 +1,5 @@
 //
-//  NSObject+Additional.h
+//  NSObject+Additions.h
 //  iOSTools
 //
 //  Created by Alex Kurochkin on 7/24/13.
@@ -10,7 +10,7 @@
 
 #define DEALLOC - (void)dealloc { [self clean];[super dealloc];}
 
-@interface NSObject (Additional)
+@interface NSObject (Additions)
 
 - (void)clean;
 

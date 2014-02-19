@@ -1,15 +1,15 @@
 //
-//  NSObject+Additional.m
+//  NSObject+Additions.m
 //  iOSTools
 //
 //  Created by Alex Kurochkin on 7/24/13.
 //  Copyright (c) 2013 Alex Kurochkin. All rights reserved.
 //
 
-#import "NSObject+Additional.h"
+#import "NSObject+Additions.h"
 #import <objc/runtime.h>
 
-@implementation NSObject (Additional)
+@implementation NSObject (Additions)
 
 - (void)clean {
     unsigned int outCount, i;

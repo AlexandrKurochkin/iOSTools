@@ -1,14 +1,14 @@
 //
-//  NSError+Additionals.m
+//  NSError+Additions.m
 //  iOSTools
 //
 //  Created by Alex Kurochkin on 7/19/13.
 //  Copyright (c) 2013 Alex Kurochkin. All rights reserved.
 //
 
-#import "NSError+Additionals.h"
+#import "NSError+Additions.h"
 
-@implementation NSError (Additionals)
+@implementation NSError (Additions)
 
 - (void)print {
     NSLog(@"error code: %d", [self code]);

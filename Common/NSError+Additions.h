@@ -1,5 +1,5 @@
 //
-//  NSError+Additionals.h
+//  NSError+Additions.h
 //  iOSTools
 //
 //  Created by Alex Kurochkin on 7/19/13.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSError (Additionals)
+@interface NSError (Additions)
 
 - (void)print;
 
