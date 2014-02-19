@@ -14,4 +14,8 @@
 
 - (void)clean;
 
++ (NSArray *)listOfPropertiesOfClass:(Class)aClass;
+- (NSArray *)listOfProperties;
+- (NSDictionary *) dictionaryWithProperties;
+
 @end

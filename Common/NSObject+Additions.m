@@ -33,4 +33,49 @@
     free(properties);
 }
 
+#pragma mark - work properties
+
+- (NSArray *)listOfProperties {
+    unsigned int propertyCount = 0;
+    objc_property_t * properties = class_copyPropertyList([self class], &propertyCount);
+    
+    NSMutableArray * propertyNames = [NSMutableArray array];
+    for (unsigned int i = 0; i < propertyCount; ++i) {
+        [propertyNames addObject:[NSString stringWithUTF8String:property_getName(properties[i])]];
+    }
+    free(properties);
+    //    NSLog(@"Names: %@", propertyNames);
+    return [NSArray arrayWithArray:propertyNames];
+}
+
++ (NSArray *)listOfPropertiesOfClass:(Class)aClass {
+    unsigned int propertyCount = 0;
+    objc_property_t * properties = class_copyPropertyList(aClass, &propertyCount);
+    
+    NSMutableArray * propertyNames = [NSMutableArray array];
+    for (unsigned int i = 0; i < propertyCount; ++i) {
+        [propertyNames addObject:[NSString stringWithUTF8String:property_getName(properties[i])]];
+    }
+    free(properties);
+    //    NSLog(@"Names: %@", propertyNames);
+    return [NSArray arrayWithArray:propertyNames];
+}
+
+- (NSDictionary *) dictionaryWithProperties {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
+    unsigned count;
+    objc_property_t *properties = class_copyPropertyList([self class], &count);
+    
+    for (int i = 0; i < count; i++) {
+        NSString *key = [NSString stringWithUTF8String:property_getName(properties[i])];
+        [dict setObject:[self valueForKey:key] forKey:key];
+    }
+    
+    free(properties);
+    
+    return [NSDictionary dictionaryWithDictionary:dict];
+}
+
+
 @end
