@@ -35,8 +35,9 @@
     [AlertManager showSimpleAlertWithTitle:kErrorTitle message:kNoInternetMessage cancelButtonTitle:kOkButton];
 }
 
-+ (void)showAllertAboutWrongLength {
-    [AlertManager showSimpleAlertWithTitle:kErrorTitle message:kWrongLengthMessage cancelButtonTitle:kOkButton];
++ (void)showAllertAboutWrongLengthOf:(NSString *)fieldName minLenght:(NSUInteger)minLenght {
+    NSString *msg = [NSString stringWithFormat:kWrongLengthMessage, fieldName, (unsigned long)minLenght];
+    [AlertManager showSimpleAlertWithTitle:kErrorTitle message:msg cancelButtonTitle:kOkButton];
 }
 
 

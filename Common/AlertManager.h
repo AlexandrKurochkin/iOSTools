@@ -13,7 +13,7 @@
 
 //Common messages
 #define kNoInternetMessage                  @"No internet connection. Please try later"
-#define kWrongLengthMessage                 @"Lenght of name should be more then 0"
+#define kWrongLengthMessage                 @"Lenght of %@ should be more then %ld"
 #define kEmailValidatiomMessage             @"Wrong email."
 
 //User data messages
@@ -39,7 +39,7 @@
 /*========= Common App Alerts =========*/
 + (void)showAllertForError:(NSError *)error;
 + (void)showAllertAboutNoInternetConnection;
-+ (void)showAllertAboutWrongLength;
++ (void)showAllertAboutWrongLengthOf:(NSString *)fieldName minLenght:(NSUInteger)minLenght;
 + (void)showAllertAboutWrongEmail;
 
 /*========= User data alerts =========*/
