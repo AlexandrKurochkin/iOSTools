@@ -57,6 +57,10 @@
 
 #pragma mark - Change passwords messages
 
++ (void)showAllertAboutWrongPassword {
+    [AlertManager showSimpleAlertWithTitle:kErrorTitle message:kWrongPswdMessage cancelButtonTitle:kOkButton];
+}
+
 + (void)showAllertAboutNewPasswortNoMatch {
     [AlertManager showSimpleAlertWithTitle:kErrorTitle message:kNewPswdNoMatxgMessage cancelButtonTitle:kOkButton];
 }

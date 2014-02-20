@@ -22,6 +22,7 @@
 #define kRadiusValidatiomMessage            @"Radius should contain only digital and should be more then 0"
 
 //Password messages
+#define kWrongPswdMessage                   @"Wrong Password."
 #define kNewPswdNoMatxgMessage              @"New password doesn't match."
 #define kNewPswdSmallLenghtMessage          @"Length of password should be 6 and more characters."
 #define kNewCurrentPswdVoidMessage          @"Current password is void."
@@ -46,6 +47,7 @@
 + (void)showAllertAboutWrongBirthday;
 
 /*==== Password alerts =======*/
++ (void)showAllertAboutWrongPassword;
 + (void)showAllertAboutNewPasswortNoMatch;
 + (void)showAllertAboutSmallPswdLength;
 + (void)showAllertAboutVoidCurrentPswd;
