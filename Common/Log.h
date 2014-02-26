@@ -31,5 +31,6 @@
 #endif
 #endif
 
+#define  /* TODO: NOT_IMPLEMENTED_YET */TODO_NOT_IMPLEMENTED_YET			DLog(@"TODO! Not implemented yet.");
 
 #endif
