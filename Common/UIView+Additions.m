@@ -25,4 +25,9 @@
     self.layer.mask = maskLayer;
 }
 
+- (CGFloat)x { return self.frame.origin.x;}
+- (CGFloat)y { return self.frame.origin.y;}
+- (CGFloat)width { return self.frame.size.width; }
+- (CGFloat)height { return self.frame.size.height;}
+
 @end

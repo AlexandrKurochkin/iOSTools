@@ -12,4 +12,9 @@
 
 - (void)rounderCorners:(UIRectCorner)corners radius:(CGFloat)radius;
 
+- (CGFloat)x;
+- (CGFloat)y;
+- (CGFloat)width;
+- (CGFloat)height;
+
 @end
