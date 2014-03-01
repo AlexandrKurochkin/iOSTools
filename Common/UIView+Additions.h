@@ -10,9 +10,6 @@
 
 @interface UIView (Additions)
 
-- (void)rounderCorners:(UIRectCorner)corners radius:(CGFloat)radius;
-
-
 - (void)setX:(CGFloat)newX;
 - (CGFloat)x;
 
@@ -32,6 +29,8 @@
 
 - (void)setSize:(CGSize)newSize;
 - (CGSize)size;
+
+- (void)rounderCorners:(UIRectCorner)corners radius:(CGFloat)radius;
 
 - (void)printFrame;
 

@@ -10,21 +10,6 @@
 
 @implementation UIView (Additions)
 
-- (void)rounderCorners:(UIRectCorner)corners radius:(CGFloat)radius {
-    
-    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds
-                                                   byRoundingCorners:corners
-                                                         cornerRadii:CGSizeMake(radius, radius)];
-    
-    // Create the shape layer and set its path
-    CAShapeLayer *maskLayer = [CAShapeLayer layer];
-    maskLayer.frame = self.bounds;
-    maskLayer.path = maskPath.CGPath;
-    
-    // Set the newly created shape layer as the mask for the image view's layer
-    self.layer.mask = maskLayer;
-}
-
 - (void)setX:(CGFloat)newX { self.frame = CGRectMake(newX, self.y, self.width, self.height);}
 - (CGFloat)x { return self.frame.origin.x;}
 
@@ -48,6 +33,23 @@
 - (void)printFrame {
     DLog(@"%@ frame: %@", NSStringFromClass([self class]), NSStringFromCGRect(self.frame));
 }
+
+
+- (void)rounderCorners:(UIRectCorner)corners radius:(CGFloat)radius {
+    
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds
+                                                   byRoundingCorners:corners
+                                                         cornerRadii:CGSizeMake(radius, radius)];
+    
+    // Create the shape layer and set its path
+    CAShapeLayer *maskLayer = [CAShapeLayer layer];
+    maskLayer.frame = self.bounds;
+    maskLayer.path = maskPath.CGPath;
+    
+    // Set the newly created shape layer as the mask for the image view's layer
+    self.layer.mask = maskLayer;
+}
+
 
 
 @end
