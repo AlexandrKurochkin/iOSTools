@@ -12,9 +12,28 @@
 
 - (void)rounderCorners:(UIRectCorner)corners radius:(CGFloat)radius;
 
+
+- (void)setX:(CGFloat)newX;
 - (CGFloat)x;
+
+- (void)setY:(CGFloat)newY;
 - (CGFloat)y;
+
+
+- (void)setWidth:(CGFloat)newWidth;
 - (CGFloat)width;
+
+- (void)setHeight:(CGFloat)newHeight;
 - (CGFloat)height;
+
+
+- (void)setOrigin:(CGPoint)newOrigin;
+- (CGPoint)origin;
+
+- (void)setSize:(CGSize)newSize;
+- (CGSize)size;
+
+- (void)printFrame;
+
 
 @end
