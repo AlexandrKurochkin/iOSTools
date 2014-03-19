@@ -20,8 +20,8 @@ static char UI_COMPLETION_BLOCK;
 @implementation PopoverContentViewController
 
 @synthesize contentItems;
+@synthesize choosenItems;
 @dynamic choosenOfferBlock;
-
 
 - (void)setChoosenOfferBlock:(ChosenOfferBlock)scanningCompletionBlock {
 	objc_setAssociatedObject(self,&UI_COMPLETION_BLOCK,scanningCompletionBlock,OBJC_ASSOCIATION_COPY);
@@ -37,6 +37,14 @@ static char UI_COMPLETION_BLOCK;
         // Custom initialization
         self.contentItems = items;
         self.choosenOfferBlock = block;
+    }
+    return self;
+}
+
+- (id)initWithItems:(NSArray *)items choosenItems:(NSArray *)chossedItems choosenItemBlock:(ChosenOfferBlock)block {
+    self = [self initWithItems:items choosenItemBlock:block];
+    if (self != nil) {
+        self.choosenItems = chossedItems;
     }
     return self;
 }
