@@ -9,15 +9,19 @@
 #import <UIKit/UIKit.h>
 
 
-typedef void(^ChosenOfferBlock)(NSInteger index);
+typedef void(^PopoverChosenItemBlock)(NSInteger index);
+typedef void(^SelectedItemsBlock)(NSArray *indexesOfselectedItems);
 
 @interface PopoverContentViewController : UITableViewController
 
 @property (nonatomic, retain, readonly) NSArray *contentItems;
 @property (nonatomic, strong, readwrite) NSArray *choosenItems;
-@property (nonatomic, assign, readwrite) ChosenOfferBlock choosenOfferBlock;
+@property (nonatomic, assign, readwrite) PopoverChosenItemBlock choosenItemBlock;
+@property (nonatomic, assign, readwrite) SelectedItemsBlock selectedIndexesBlock;
 
-- (id)initWithItems:(NSArray *)items choosenItemBlock:(ChosenOfferBlock)block;
-- (id)initWithItems:(NSArray *)items choosenItems:(NSArray *)chossedItems choosenItemBlock:(ChosenOfferBlock)block;
+- (id)initWithItems:(NSArray *)items choosenItemBlock:(PopoverChosenItemBlock)block;
+- (id)initWithItems:(NSArray *)items choosenItems:(NSArray *)chossedItems choosenItemBlock:(PopoverChosenItemBlock)block;
+
+- (id)initWithItems:(NSArray *)items choosenItems:(NSArray *)chossedItems selectedItemBlock:(SelectedItemsBlock)block;
 
 @end

@@ -10,6 +10,7 @@
 #import <objc/runtime.h>
 
 static char UI_COMPLETION_BLOCK;
+static char UI_SELECTED_ITEMS_BLOCK;
 
 @interface PopoverContentViewController ()
 
@@ -19,29 +20,41 @@ static char UI_COMPLETION_BLOCK;
 
 @implementation PopoverContentViewController
 
+#pragma mark - properties
+
 @synthesize contentItems;
 @synthesize choosenItems;
-@dynamic choosenOfferBlock;
+@dynamic choosenItemBlock;
+@dynamic selectedIndexesBlock;
 
-- (void)setChoosenOfferBlock:(ChosenOfferBlock)scanningCompletionBlock {
-	objc_setAssociatedObject(self,&UI_COMPLETION_BLOCK,scanningCompletionBlock,OBJC_ASSOCIATION_COPY);
+- (void)setChoosenItemBlock:(PopoverChosenItemBlock)choosenItemBlock {
+	objc_setAssociatedObject(self,&UI_COMPLETION_BLOCK,choosenItemBlock,OBJC_ASSOCIATION_COPY);
 }
 
-- (ChosenOfferBlock)choosenOfferBlock {
+- (PopoverChosenItemBlock)choosenItemBlock {
 	return objc_getAssociatedObject(self, &UI_COMPLETION_BLOCK);
 }
 
-- (id)initWithItems:(NSArray *)items choosenItemBlock:(ChosenOfferBlock)block {
+- (void)setSelectedIndexesBlock:(SelectedItemsBlock)selectedIndexesBlock {
+	objc_setAssociatedObject(self,&UI_SELECTED_ITEMS_BLOCK,selectedIndexesBlock,OBJC_ASSOCIATION_COPY);
+}
+
+- (SelectedItemsBlock)selectedIndexesBlock {
+	return objc_getAssociatedObject(self, &UI_SELECTED_ITEMS_BLOCK);
+}
+
+#pragma mark - initializations
+
+- (id)initWithItems:(NSArray *)items choosenItemBlock:(PopoverChosenItemBlock)block {
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
-        // Custom initialization
         self.contentItems = items;
-        self.choosenOfferBlock = block;
+        self.choosenItemBlock = block;
     }
     return self;
 }
 
-- (id)initWithItems:(NSArray *)items choosenItems:(NSArray *)chossedItems choosenItemBlock:(ChosenOfferBlock)block {
+- (id)initWithItems:(NSArray *)items choosenItems:(NSArray *)chossedItems choosenItemBlock:(PopoverChosenItemBlock)block {
     self = [self initWithItems:items choosenItemBlock:block];
     if (self != nil) {
         self.choosenItems = chossedItems;
@@ -49,8 +62,19 @@ static char UI_COMPLETION_BLOCK;
     return self;
 }
 
+- (id)initWithItems:(NSArray *)items choosenItems:(NSArray *)chossedItems selectedItemBlock:(SelectedItemsBlock)block {
+    self = [super initWithStyle:UITableViewStylePlain];
+    if (self) {
+        self.contentItems = items;
+        self.choosenItems = chossedItems;
+        self.selectedIndexesBlock = block;
+    }
+    return self;
+}
+
 - (void)dealloc {
-    self.choosenOfferBlock = nil;
+    self.choosenItemBlock = nil;
+    self.selectedIndexesBlock = nil;
     [self clean];
 }
 
@@ -81,7 +105,13 @@ static char UI_COMPLETION_BLOCK;
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.choosenOfferBlock(indexPath.row);
+    if (self.choosenItemBlock) {
+        self.choosenItemBlock(indexPath.row);
+    }
+    
+    if (self.selectedIndexesBlock) {
+        self.selectedIndexesBlock ([tableView indexPathsForSelectedRows]);
+    }
 }
 
 @end
