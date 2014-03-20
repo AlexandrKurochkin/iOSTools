@@ -24,6 +24,8 @@
 - (void)centerMapView:(MKMapView *)mapView;
 - (double)metrsOfCurrentDistanceFrom:(CLLocationCoordinate2D)origin to:(CLLocationCoordinate2D)destination;
 
+- (void)centerMap:(MKMapView *)mapView forRoutePoints:(NSArray *)arrRoutePoints;
+
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_7_0
 - (MKPolylineRenderer *)routePolylineView;
 #else
