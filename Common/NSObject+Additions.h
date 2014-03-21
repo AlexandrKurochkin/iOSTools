@@ -18,5 +18,7 @@
 + (NSArray *)listOfPropertiesOfClass:(Class)aClass;
 - (NSArray *)listOfProperties;
 - (NSDictionary *) dictionaryWithProperties;
+- (id)createClone;
+- (void)printAllData;
 
 @end
