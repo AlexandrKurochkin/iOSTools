@@ -66,12 +66,12 @@
 #pragma mark - animations
 
 - (void)moveUpFields {
-    if (IS_LANDSCAPE_CURRENT_INTERFACE_ORIENTATION)
+    if (IS_LANDSCAPE_CURRENT_DEVICE_ORIENTATION)
         [self moveFieldsOn:_newY];
 }
 
 - (void)moveDownFields {
-    if (IS_LANDSCAPE_CURRENT_INTERFACE_ORIENTATION)
+    if (IS_LANDSCAPE_CURRENT_DEVICE_ORIENTATION)
         [self moveFieldsOn:_oldY];
 }
 

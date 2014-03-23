@@ -7,10 +7,17 @@
 //
 
 //Orientation
-#define CURRENT_INTERFACE_ORIENTATION               [[UIDevice currentDevice] orientation]
+
+#define CURRENT_INTERFACE_ORIENTATION               self.interfaceOrientation
+
 
 #define IS_LANDSCAPE_CURRENT_INTERFACE_ORIENTATION  UIInterfaceOrientationIsLandscape(CURRENT_INTERFACE_ORIENTATION)
 #define IS_PORTRAIT_CURRENT_INTERFACE_ORIENTATION   UIInterfaceOrientationIsPortrait(CURRENT_INTERFACE_ORIENTATION)
+
+#define CURRENT_DEVICE_ORIENTATION                  [[UIDevice currentDevice] orientation]
+#define IS_LANDSCAPE_CURRENT_DEVICE_ORIENTATION     UIInterfaceOrientationIsLandscape(CURRENT_DEVICE_ORIENTATION)
+#define IS_PORTRAIT_CURRENT_DEVICE_ORIENTATION   UIInterfaceOrientationIsPortrait(CURRENT_DEVICE_ORIENTATION)
+
 
 //Device Type
 
