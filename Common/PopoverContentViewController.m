@@ -45,10 +45,18 @@ static char UI_SELECTED_ITEMS_BLOCK;
 
 #pragma mark - initializations
 
-- (id)initWithItems:(NSArray *)items choosenItemBlock:(PopoverChosenItemBlock)block {
+- (id)initWithItems:(NSArray *)items {
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
         self.contentItems = items;
+    }
+    return self;
+    
+}
+
+- (id)initWithItems:(NSArray *)items choosenItemBlock:(PopoverChosenItemBlock)block {
+    self = [self initWithItems:items];
+    if (self) {
         self.choosenItemBlock = block;
     }
     return self;

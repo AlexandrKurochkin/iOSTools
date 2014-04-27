@@ -19,6 +19,8 @@ typedef void(^SelectedItemsBlock)(NSArray *indexesOfselectedItems);
 @property (nonatomic, assign, readwrite) PopoverChosenItemBlock choosenItemBlock;
 @property (nonatomic, assign, readwrite) SelectedItemsBlock selectedIndexesBlock;
 
+
+- (id)initWithItems:(NSArray *)items;
 - (id)initWithItems:(NSArray *)items choosenItemBlock:(PopoverChosenItemBlock)block;
 - (id)initWithItems:(NSArray *)items choosenItems:(NSArray *)chossedItems choosenItemBlock:(PopoverChosenItemBlock)block;
 
