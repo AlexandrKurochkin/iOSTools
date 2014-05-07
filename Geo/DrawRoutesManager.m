@@ -223,14 +223,10 @@ static DrawRoutesManager *sharedInstance = nil;
     {
         CLLocation* currentLocation = arrRoutePoints[idx];
         
-        if(currentLocation.coordinate.latitude > maxLat)
-            maxLat = currentLocation.coordinate.latitude;
-        if(currentLocation.coordinate.latitude < minLat)
-            minLat = currentLocation.coordinate.latitude;
-        if(currentLocation.coordinate.longitude > maxLon)
-            maxLon = currentLocation.coordinate.longitude;
-        if(currentLocation.coordinate.longitude < minLon)
-            minLon = currentLocation.coordinate.longitude;
+        if(currentLocation.coordinate.latitude > maxLat)    maxLat = currentLocation.coordinate.latitude;
+        if(currentLocation.coordinate.latitude < minLat)    minLat = currentLocation.coordinate.latitude;
+        if(currentLocation.coordinate.longitude > maxLon)   maxLon = currentLocation.coordinate.longitude;
+        if(currentLocation.coordinate.longitude < minLon)   minLon = currentLocation.coordinate.longitude;
     }
     
     region.center.latitude     = (maxLat + minLat) / 2;
@@ -238,7 +234,8 @@ static DrawRoutesManager *sharedInstance = nil;
     region.span.latitudeDelta  = maxLat - minLat;
     region.span.longitudeDelta = maxLon - minLon;
     
-    [mapView setRegion:region animated:YES];
+    
+    [mapView setRegion:[mapView regionThatFits:region] animated:YES];
 }
 
 @end
