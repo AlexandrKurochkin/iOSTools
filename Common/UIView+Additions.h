@@ -39,7 +39,7 @@
 
 /*
  Show Activity indicator
- */
+*/
 
 
 @interface UIView (ShowActivityView)
