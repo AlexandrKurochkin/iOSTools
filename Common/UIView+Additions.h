@@ -34,5 +34,20 @@
 
 - (void)printFrame;
 
+@end
+
+
+/*
+ Show Activity indicator
+ */
+
+
+@interface UIView (ShowActivityView)
+
+@property (nonatomic, strong, readwrite) UIActivityIndicatorView *activityView;
+
+- (void)showLoadingOnView;
+- (void)hideLoadingOnView;
 
 @end
+

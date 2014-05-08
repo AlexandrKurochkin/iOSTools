@@ -7,6 +7,7 @@
 //
 
 #import "UIView+Additions.h"
+#import <objc/runtime.h>
 
 @implementation UIView (Additions)
 
@@ -50,6 +51,51 @@
     self.layer.mask = maskLayer;
 }
 
+@end
+
+/*
+    Show Activity indicator
+*/
+
+NSString * const kDHStyleKey = @"kDHStyleKey";
+
+@implementation UIView (ShowActivityView)
+
+
+- (void)setActivityView:(UIActivityIndicatorView *)aView {
+	objc_setAssociatedObject(self,  (__bridge const void *)(kDHStyleKey), aView, OBJC_ASSOCIATION_RETAIN);
+}
+
+- (UIActivityIndicatorView *)activityView {
+	return objc_getAssociatedObject(self, (__bridge const void *)(kDHStyleKey));
+}
+
+
+- (void)setupLoadingView {
+    self.activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.activityView.color = [UIColor colorWithRed:42.0f/255.0f green:170.0f/255.0f blue:242.0f/255.0f alpha:1.0f];
+    self.activityView.center = self.center;
+    [self addSubview:self.activityView];
+    
+    self.activityView.hidden = YES;
+}
+
+- (void)showLoadingOnView {
+    
+    if (self.activityView == nil) {
+        [self setupLoadingView];
+    }
+    
+    self.activityView.center = self.center;
+    self.activityView.hidden = NO;
+    [self.activityView startAnimating];
+    [self bringSubviewToFront:self.activityView];
+}
+
+- (void)hideLoadingOnView {
+    [self.activityView stopAnimating];
+    self.activityView.hidden = YES;
+}
 
 
 @end
