@@ -22,4 +22,11 @@
     return [NSArray arrayWithArray:mArr];
 }
 
+- (NSArray *)arrayWithAddedObject:(id)obj {
+    NSMutableArray *mArr = [NSMutableArray arrayWithArray:self];
+    [mArr addObject:obj];
+    return [NSArray arrayWithArray:mArr];
+}
+
+
 @end

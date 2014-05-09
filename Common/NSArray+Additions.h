@@ -12,5 +12,6 @@
 
 - (NSArray *)arrayWithRemovedObjectAtIndex:(NSInteger)index;
 - (NSArray *)arrayWithRemovedObject:(id)obj;
+- (NSArray *)arrayWithAddedObject:(id)obj;
 
 @end
