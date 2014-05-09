@@ -11,5 +11,6 @@
 @interface NSArray (Additions)
 
 - (NSArray *)arrayWithRemovedObjectAtIndex:(NSInteger)index;
+- (NSArray *)arrayWithRemovedObject:(id)obj;
 
 @end

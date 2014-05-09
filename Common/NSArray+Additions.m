@@ -16,4 +16,10 @@
     return [NSArray arrayWithArray:mArr];
 }
 
+- (NSArray *)arrayWithRemovedObject:(id)obj {
+    NSMutableArray *mArr = [NSMutableArray arrayWithArray:self];
+    [mArr removeObject:obj];
+    return [NSArray arrayWithArray:mArr];
+}
+
 @end
