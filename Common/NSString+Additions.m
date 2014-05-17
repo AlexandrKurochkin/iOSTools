@@ -8,6 +8,9 @@
 
 #import "NSString+Additions.h"
 
+#define kDigitalKey                         @"1234567890."
+#define kNaturalDigitalKey                  @"1234567890"
+
 @implementation NSString (Additions)
 
 - (BOOL)isValidEmail {
@@ -21,6 +24,13 @@
 
 - (BOOL)isContainSubstring:(NSString *)substring {
     return ([self rangeOfString:substring].location == NSNotFound) ? NO : YES;
+}
+
+- (BOOL)isNaturalNumber {
+    BOOL valid = [[self stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:kNaturalDigitalKey]] isEqualToString:@""];
+    
+    BOOL isValidate = (valid && [self integerValue] > 0);
+    return isValidate;
 }
 
 @end

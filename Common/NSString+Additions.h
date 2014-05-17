@@ -12,5 +12,6 @@
 
 - (BOOL)isValidEmail;
 - (BOOL)isContainSubstring:(NSString *)substring;
+- (BOOL)isNaturalNumber;
 
 @end
