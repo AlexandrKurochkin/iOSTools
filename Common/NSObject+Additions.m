@@ -52,6 +52,26 @@
     return [NSArray arrayWithArray:propertyNames];
 }
 
++ (NSArray *)listOfPropertiesOfClass:(Class)aClass untilSuperClass:(Class)untilSuperClass {
+    
+
+    NSMutableArray * propertyNames = [NSMutableArray array];
+    
+    const char *untilClassName = class_getName(untilSuperClass);
+    
+    Class currentClass = aClass;
+    const char *currentClassName = class_getName(currentClass);
+    ;
+    
+    while (strcmp(untilClassName, currentClassName)) {
+        [propertyNames addObjectsFromArray:[NSObject listOfPropertiesOfClass:currentClass]];
+        currentClass = class_getSuperclass(currentClass);
+        currentClassName = class_getName(currentClass);
+    }
+
+    return [NSArray arrayWithArray:propertyNames];
+}
+
 - (NSDictionary *) dictionaryWithProperties {
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [self completeObject:dict fromSourceObject:self];

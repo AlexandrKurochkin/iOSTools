@@ -16,6 +16,8 @@
 - (void)clean;
 
 + (NSArray *)listOfPropertiesOfClass:(Class)aClass;
++ (NSArray *)listOfPropertiesOfClass:(Class)aClass untilSuperClass:(Class)untilSuperClass;
+
 - (NSArray *)listOfProperties;
 - (NSDictionary *) dictionaryWithProperties;
 - (id)createClone;
