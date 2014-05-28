@@ -22,5 +22,6 @@
 - (NSDictionary *) dictionaryWithProperties;
 - (id)createClone;
 - (void)printAllData;
+- (BOOL)isSimilar:(id)obj;
 
 @end

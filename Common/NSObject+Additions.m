@@ -121,6 +121,36 @@
     return clone;
 }
 
+- (BOOL)isSimilar:(id)obj {
+    BOOL returnValue = YES;
+    
+    if ([obj isKindOfClass:[self class]]) {
+        NSArray *keys = [NSObject listOfPropertiesOfClass:[self class] untilSuperClass:[NSObject class]];
+        
+        for (NSString *key in keys) {
+            id value1 = [self valueForKey:key];
+            id value2 = [obj valueForKey:key];
+            
+            BOOL isBothNilOrNSNull = ((value1 == nil && [value2 isKindOfClass:[NSNull class]]) ||
+                                      (value2 == nil && [value1 isKindOfClass:[NSNull class]]));
+            
+            if (!isBothNilOrNSNull) {
+                if (![value1 isEqual:value2]) {
+                    returnValue = NO;
+                    break;
+                }
+            }
+        }
+    } else {
+        returnValue = NO;
+    }
+    
+    
+//    NSArray *keys2 = [NSObject listOfPropertiesOfClass:[obj class] untilSuperClass:[NSObject class]];
+    
+    return returnValue;
+}
+
 - (void)printAllData {
     DLog(@"<%@: %@> \nProperties: \n%@", NSStringFromClass([self class]), [NSString stringWithFormat:@"%p",self], [self dictionaryWithProperties]);
 }
