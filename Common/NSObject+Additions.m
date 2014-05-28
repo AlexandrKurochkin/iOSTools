@@ -78,11 +78,13 @@
     return [NSDictionary dictionaryWithDictionary:dict];
 }
 
+
+
 - (void)completeObject:(id)object fromSourceObject:(id)sourceObject {
-    unsigned count;
-    objc_property_t *properties = class_copyPropertyList([sourceObject class], &count);
-    for (int i = 0; i < count; i++) {
-        NSString *key = [NSString stringWithUTF8String:property_getName(properties[i])];
+    
+    NSArray *keys = [NSObject listOfPropertiesOfClass:[sourceObject class] untilSuperClass:[NSObject class]];
+    
+    for (NSString *key in keys) {
         id value = [sourceObject valueForKey:key];
         value = (value != nil) ? value : [NSNull null];
         
@@ -91,9 +93,27 @@
         } else {
             [object setValue:value forKey:key];
         }
+        
     }
-    free(properties);
 }
+
+//- (void)completeObject:(id)object fromSourceObject:(id)sourceObject {
+//    unsigned count;
+//    objc_property_t *properties = class_copyPropertyList([sourceObject class], &count);
+//    
+//    for (int i = 0; i < count; i++) {
+//        NSString *key = [NSString stringWithUTF8String:property_getName(properties[i])];
+//        id value = [sourceObject valueForKey:key];
+//        value = (value != nil) ? value : [NSNull null];
+//        
+//        if ([object isKindOfClass:[NSDictionary class]] || [object isKindOfClass:[NSMutableDictionary class]]) {
+//            [object setObject:value forKey:key];
+//        } else {
+//            [object setValue:value forKey:key];
+//        }
+//    }
+//    free(properties);
+//}
 
 - (id)createClone {
     id clone = [[self class] new];
