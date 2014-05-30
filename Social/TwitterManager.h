@@ -10,6 +10,7 @@
 
 @interface TwitterManager : NSObject
 
++ (id)sharedManager;
 + (void)twitMessage:(NSString *)message;
 + (void)postImage:(UIImage *)image withStatus:(NSString *)status;
 

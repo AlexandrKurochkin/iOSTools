@@ -9,10 +9,25 @@
 #import "TwitterManager.h"
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
+#import "UIAlertView+Blocks.h"
 
 @implementation TwitterManager
 
++ (id)sharedManager {
+    static TwitterManager *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[TwitterManager alloc] init];
+        // Do any other initialisation stuff here
+    });
+    return sharedInstance;
+}
+
 + (void)twitMessage:(NSString *)message {
+    [[TwitterManager sharedManager] twitMessage:message];
+}
+
+- (void)twitMessage:(NSString *)message {
     NSString *post = message;
     
     if (post.length >= 141) {
@@ -47,7 +62,25 @@
     }
 }
 
+- (void)showErrorAllertForErrorCode:(NSNumber *)errorCode {
+    NSInteger code = [errorCode integerValue];
+    
+    switch (code) {
+        case 400:
+            UIAlertViewShow(@"Twitter Error", @"Please login in twitter app", @[@"ok"], nil);
+            break;
+            
+        default:
+            UIAlertViewShow(@"Twitter Error", [NSString stringWithFormat: @"Error code %d", code], @[@"ok"], nil);
+            break;
+    }
+}
+
 + (void)postImage:(UIImage *)image withStatus:(NSString *)status {
+    [[TwitterManager sharedManager] postImage:image withStatus:status];
+}
+
+- (void)postImage:(UIImage *)image withStatus:(NSString *)status {
     ACAccountStore *accountStoreTw = [[ACAccountStore alloc] init];
     ACAccountType *twitterType = [accountStoreTw accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     
@@ -64,20 +97,15 @@
                                                   error:NULL];
                 NSLog(@"[SUCCESS!] Created Tweet with ID: %@", postResponseData[@"id_str"]);
                 alertText = @"Tweeted success";
-            }
-            else {
+            } else {
                 alertText = [NSString stringWithFormat:@"[ERROR] Server responded: status code %ld %@", (long)statusCode,
                              [NSHTTPURLResponse localizedStringForStatusCode:statusCode]];
                 NSLog(@"%@", alertText);
+                
+                [self performSelectorOnMainThread:@selector(showErrorAllertForErrorCode:) withObject:@(statusCode) waitUntilDone:NO];
+                
             }
-//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Tweet result"
-//                                         message:alertText
-//                                        delegate:self
-//                               cancelButtonTitle:@"OK!"
-//                               otherButtonTitles:nil];
-//            
-//            [alert show];
-//            [alert release];
+
         }
         else {
             NSLog(@"[ERROR] An error occurred while posting: %@", [error localizedDescription]);
