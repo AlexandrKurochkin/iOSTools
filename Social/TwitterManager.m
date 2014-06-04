@@ -71,7 +71,7 @@
             break;
             
         default:
-            UIAlertViewShow(@"Twitter Error", [NSString stringWithFormat: @"Error code %d", code], @[@"ok"], nil);
+            UIAlertViewShow(@"Twitter Error", [NSString stringWithFormat: @"Error code %ld", (long)code], @[@"ok"], nil);
             break;
     }
 }
