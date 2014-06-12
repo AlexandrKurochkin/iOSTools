@@ -15,11 +15,11 @@ static char UI_COMPLETION_BLOCK;
 @implementation NSDictionary (DatePickerAdditions)
 
 - (void)setValue:(id)value forComponent:(NSUInteger)component andRow:(NSUInteger)row {
-    [self setValue:value forKey:[NSString stringWithFormat:@"%d - %d", component, row]];
+    [self setValue:value forKey:[NSString stringWithFormat:@"%lu - %lu", (unsigned long)component, (unsigned long)row]];
 }
 
 - (id)valueForComponent:(NSUInteger)component andRow:(NSUInteger)row {
-   return [self objectForKey:[NSString stringWithFormat:@"%d - %d", component, row]];
+   return [self objectForKey:[NSString stringWithFormat:@"%lu - %lu", (unsigned long)component, (unsigned long)row]];
 }
 
 @end

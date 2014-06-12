@@ -106,7 +106,7 @@ static char kActivityStyle;
 }
 
 - (UIAlertViewActivityStyle)activityStyle {
-	return [objc_getAssociatedObject(self, &kActivityStyle) integerValue];
+	return (UIAlertViewActivityStyle)[objc_getAssociatedObject(self, &kActivityStyle) integerValue];
 }
 
 
