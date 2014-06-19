@@ -15,7 +15,7 @@ typedef void(^ChosenDateBlock)(UIDatePicker *datePicker);
 
 @property (nonatomic, weak, readwrite) IBOutlet UIDatePicker *datePicker;
 
-- (id)initWithStartDate:(NSDate *)date choosenDateBlock:(ChosenDateBlock)aChoosenDateBlock;
+- (id)initWithDatePickerMode:(UIDatePickerMode)datePickerMode startDate:(NSDate *)date choosenDateBlock:(ChosenDateBlock)aChoosenDateBlock;
 
 - (IBAction)valueChanged:(UIDatePicker *)sender;
 
