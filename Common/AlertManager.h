@@ -18,7 +18,6 @@
 
 //User data messages
 #define kBirthdayValidationMessage          @"Wrong date of birth. You must be at least %d years old."
-#define WHValidAge       4
 #define kRadiusValidatiomMessage            @"Radius should contain only digital and should be more then 0"
 
 //Password messages
