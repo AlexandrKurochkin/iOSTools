@@ -33,4 +33,8 @@
     return isValidate;
 }
 
++ (NSString *)stringWithIntValue:(int)intValue {
+    return [NSString stringWithFormat:@"%d",intValue];
+}
+
 @end
