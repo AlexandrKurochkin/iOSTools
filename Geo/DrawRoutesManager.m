@@ -212,30 +212,36 @@ static DrawRoutesManager *sharedInstance = nil;
 }
 
 - (void)centerMap:(MKMapView *)mapView forRoutePoints:(NSArray *)arrRoutePoints {
-    MKCoordinateRegion region;
     
-    CLLocationDegrees maxLat = -90;
-    CLLocationDegrees maxLon = -180;
-    CLLocationDegrees minLat = 90;
-    CLLocationDegrees minLon = 180;
-    
-    for(int idx = 0; idx < arrRoutePoints.count; idx++)
-    {
-        CLLocation* currentLocation = arrRoutePoints[idx];
-        
-        if(currentLocation.coordinate.latitude > maxLat)    maxLat = currentLocation.coordinate.latitude;
-        if(currentLocation.coordinate.latitude < minLat)    minLat = currentLocation.coordinate.latitude;
-        if(currentLocation.coordinate.longitude > maxLon)   maxLon = currentLocation.coordinate.longitude;
-        if(currentLocation.coordinate.longitude < minLon)   minLon = currentLocation.coordinate.longitude;
+    if (arrRoutePoints != nil) {
+        if (arrRoutePoints.count > 0) {
+            MKCoordinateRegion region;
+            
+            CLLocationDegrees maxLat = -90;
+            CLLocationDegrees maxLon = -180;
+            CLLocationDegrees minLat = 90;
+            CLLocationDegrees minLon = 180;
+            
+            for(int idx = 0; idx < arrRoutePoints.count; idx++)
+            {
+                CLLocation* currentLocation = arrRoutePoints[idx];
+                
+                if(currentLocation.coordinate.latitude > maxLat)    maxLat = currentLocation.coordinate.latitude;
+                if(currentLocation.coordinate.latitude < minLat)    minLat = currentLocation.coordinate.latitude;
+                if(currentLocation.coordinate.longitude > maxLon)   maxLon = currentLocation.coordinate.longitude;
+                if(currentLocation.coordinate.longitude < minLon)   minLon = currentLocation.coordinate.longitude;
+            }
+            
+            region.center.latitude     = (maxLat + minLat) / 2;
+            region.center.longitude    = (maxLon + minLon) / 2;
+            region.span.latitudeDelta  = maxLat - minLat;
+            region.span.longitudeDelta = maxLon - minLon;
+            
+            
+            [mapView setRegion:[mapView regionThatFits:region] animated:YES];
+        }
     }
-    
-    region.center.latitude     = (maxLat + minLat) / 2;
-    region.center.longitude    = (maxLon + minLon) / 2;
-    region.span.latitudeDelta  = maxLat - minLat;
-    region.span.longitudeDelta = maxLon - minLon;
-    
-    
-    [mapView setRegion:[mapView regionThatFits:region] animated:YES];
+
 }
 
 @end
