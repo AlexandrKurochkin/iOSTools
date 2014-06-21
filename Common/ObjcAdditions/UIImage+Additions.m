@@ -10,6 +10,26 @@
 
 @implementation UIImage (Additions)
 
+- (CGSize)proportionalResize:(CGSize)sourceSize toSize:(CGSize)destinationsSize {
+	float factorWidth = destinationsSize.width/sourceSize.width;
+	float factorHeight = destinationsSize.height/sourceSize.height;
+	CGSize newSize;
+	if (factorWidth > factorHeight ) {
+		newSize.width = (unsigned int)floor(sourceSize.width*factorHeight + 0.5);
+		newSize.height = (unsigned int)floor(sourceSize.height*factorHeight + 0.5);
+	} else {
+		newSize.width = (unsigned int)floor(sourceSize.width*factorWidth + 0.5);
+		newSize.height = (unsigned int)floor(sourceSize.height*factorWidth + 0.5);
+	}
+	return newSize;
+}
+
+
+- (UIImage *)imageProportionalScaledToSize:(CGSize)newSize {
+    CGSize newProportionalSize = [self proportionalResize:self.size toSize:newSize];
+    return [self imageScaledToSize:newProportionalSize];
+}
+
 - (UIImage *)imageScaledToSize:(CGSize)newSize {
     //UIGraphicsBeginImageContext(newSize);
     // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).

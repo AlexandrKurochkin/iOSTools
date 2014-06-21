@@ -11,5 +11,6 @@
 @interface UIImage (Additions)
 
 - (UIImage *)imageScaledToSize:(CGSize)newSize;
+- (UIImage *)imageProportionalScaledToSize:(CGSize)newSize;
 
 @end
