@@ -37,4 +37,9 @@
     return [NSString stringWithFormat:@"%d",intValue];
 }
 
++ (NSString *)stringWithIntegerValue:(NSInteger)integerValue {
+    return [NSString stringWithFormat:@"%ld",(long)integerValue];
+}
+
+
 @end

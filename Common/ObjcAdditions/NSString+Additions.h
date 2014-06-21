@@ -14,5 +14,6 @@
 - (BOOL)isContainSubstring:(NSString *)substring;
 - (BOOL)isNaturalNumber;
 + (NSString *)stringWithIntValue:(int)intValue;
++ (NSString *)stringWithIntegerValue:(NSInteger)integerValue;
 
 @end
