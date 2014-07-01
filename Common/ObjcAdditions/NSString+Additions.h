@@ -41,6 +41,7 @@
 - (BOOL)isValidEmail;
 - (BOOL)isContainSubstring:(NSString *)substring;
 - (BOOL)isNaturalNumber;
+- (NSString *)MD5;
 + (NSString *)stringWithIntValue:(int)intValue;
 + (NSString *)stringWithIntegerValue:(NSInteger)integerValue;
 
