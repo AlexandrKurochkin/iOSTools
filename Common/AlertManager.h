@@ -43,6 +43,7 @@
 #define kNoInternetMessage                  @"No internet connection. Please try later"
 #define kWrongLengthMessage                 @"Lenght of %@ should be more then %ld"
 #define kEmailValidatiomMessage             @"Wrong email."
+#define kPhoneValidatiomMessage             @"Wrong phone number."
 
 //User data messages
 #define kBirthdayValidationMessage          @"Wrong date of birth. You must be at least %d years old."
@@ -68,6 +69,7 @@
 + (void)showAllertAboutNoInternetConnection;
 + (void)showAllertAboutWrongLengthOf:(NSString *)fieldName minLenght:(NSUInteger)minLenght;
 + (void)showAllertAboutWrongEmail;
++ (void)showAllertAboutWrongPhoneNumber;
 
 /*========= User data alerts =========*/
 + (void)showAllertAboutWrongRadius;

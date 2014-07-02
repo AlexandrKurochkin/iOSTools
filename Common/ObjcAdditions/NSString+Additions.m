@@ -38,6 +38,7 @@
 #import <CommonCrypto/CommonDigest.h>
 
 #define kDigitalKey                         @"1234567890."
+#define kPhoneKey                           @"1234567890.-()+*#"
 #define kNaturalDigitalKey                  @"1234567890"
 
 @implementation NSString (Additions)
@@ -60,6 +61,10 @@
     
     BOOL isValidate = (valid && [self integerValue] > 0);
     return isValidate;
+}
+
+- (BOOL)isValidPhoneNumber {
+    return [[self stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:kPhoneKey]] isEqualToString:@""];
 }
 
 + (NSString *)stringWithIntValue:(int)intValue {

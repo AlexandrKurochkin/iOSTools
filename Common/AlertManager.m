@@ -79,6 +79,10 @@
     [AlertManager showSimpleAlertWithTitle:kErrorTitle message:kEmailValidatiomMessage cancelButtonTitle:kOkButton];
 }
 
++ (void)showAllertAboutWrongPhoneNumber {
+    [AlertManager showSimpleAlertWithTitle:kErrorTitle message:kPhoneValidatiomMessage cancelButtonTitle:kOkButton];
+}
+
 + (void)showAllertAboutWrongBirthday {
     [AlertManager showSimpleAlertWithTitle:kErrorTitle message:[NSString stringWithFormat:kBirthdayValidationMessage, WHValidAge] cancelButtonTitle:kOkButton];
 }
