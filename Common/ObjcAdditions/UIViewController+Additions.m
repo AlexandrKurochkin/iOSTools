@@ -1,5 +1,5 @@
 //
-//  UIViewController+WithPopover.m
+//  UIViewController+Additions.m
 //  https://github.com/AlexandrKurochkin/iOSTools
 //  Licensed under the terms of the BSD License, as specified below.
 //
@@ -34,10 +34,11 @@
  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "UIViewController+WithPopover.h"
+#import "UIViewController+Additions.h"
 #import <objc/runtime.h>
 
-NSString * const kPopOverKey = @"kPopOverKey";
+NSString * const kPopOverKey            = @"kPopOverKey";
+NSString * const kCurrentEditingString  = @"kCurrentEditingString";
 
 @implementation UIViewController (WithPopover)
 
@@ -51,6 +52,13 @@ NSString * const kPopOverKey = @"kPopOverKey";
 	return objc_getAssociatedObject(self, (__bridge const void *)(kPopOverKey));
 }
 
+- (void)setCurrentEditingString:(NSString *)currentEditingString {
+    objc_setAssociatedObject(self,  (__bridge const void *)(kCurrentEditingString), currentEditingString, OBJC_ASSOCIATION_RETAIN);
+}
+
+- (NSString *)currentEditingString {
+    return objc_getAssociatedObject(self, (__bridge const void *)(kCurrentEditingString));
+}
 
 - (void)showPopoverForViewController:(UIViewController *)viewController inView:(UIView *)view withFrame:(CGRect)frame  arrowDirections:(UIPopoverArrowDirection)arrowDirections contentSize:(CGSize)contentSize {
     
@@ -79,5 +87,10 @@ NSString * const kPopOverKey = @"kPopOverKey";
     
     [self showPopoverForViewController:viewController inView:view withFrame:frame arrowDirections:UIPopoverArrowDirectionDown contentSize:viewController.view.size];
 }
+
+- (BOOL)isCurrentFieldWasEdited:(NSString *)chengedText {
+    return (![self.currentEditingString isEqualToString:chengedText]);
+}
+
 
 @end

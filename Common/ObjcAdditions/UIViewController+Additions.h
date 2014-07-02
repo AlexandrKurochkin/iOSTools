@@ -1,5 +1,5 @@
 //
-//  UIViewController+WithPopover.h
+//  UIViewController+Additions.h
 //  https://github.com/AlexandrKurochkin/iOSTools
 //  Licensed under the terms of the BSD License, as specified below.
 //
@@ -39,9 +39,12 @@
 @interface UIViewController (WithPopover) < UIPopoverControllerDelegate >
 
 @property (nonatomic, strong, readwrite) UIPopoverController* currentPopover;
+@property (nonatomic, strong, readwrite) NSString* currentEditingString;
 
 - (void)showPopoverForViewController:(UIViewController *)viewController inView:(UIView *)view withFrame:(CGRect)frame  arrowDirections:(UIPopoverArrowDirection)arrowDirections contentSize:(CGSize)contentSize;
 
 - (void)showPopoverForViewController:(UIViewController *)viewController inView:(UIView *)view withFrame:(CGRect)frame;
+
+- (BOOL)isCurrentFieldWasEdited:(NSString *)chengedText;
 
 @end
