@@ -37,6 +37,8 @@
 #import <Foundation/Foundation.h>
 #import "CoreLocation/CoreLocation.h"
 
+typedef void(^CoordinateResponse)(CLLocationCoordinate2D coordinate);
+
 
 @interface LocationManager : NSObject  < CLLocationManagerDelegate > {
 
@@ -54,5 +56,7 @@
 
 - (CLLocationCoordinate2D)currentIphoneLoacationCordinate;
 - (void)updateCoordinate;
+
++ (void)coordinatsFromAddress:(NSString *)address coordinateResponse:(CoordinateResponse)coordinateResponse;
  
 @end

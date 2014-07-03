@@ -138,6 +138,15 @@ static LocationManager *sharedInstance = nil;
 }
 */
 
-
++ (void)coordinatsFromAddress:(NSString *)address coordinateResponse:(CoordinateResponse)coordinateResponse; {
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder geocodeAddressString:address completionHandler:^(NSArray* placemarks, NSError* error){
+        for (CLPlacemark* aPlacemark in placemarks) {
+            // Process the placemark.
+            CLLocationCoordinate2D coord = aPlacemark.location.coordinate;
+            coordinateResponse (coord);
+        }
+    }];
+}
 
 @end
