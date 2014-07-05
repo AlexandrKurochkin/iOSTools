@@ -155,6 +155,7 @@ NSString *const kFailurePurchaseBlock           = @"kFailurePurchaseBlock";
     
     NSString *productIdetifier = transaction.payment.productIdentifier;
     if (self.successPurchasedtBlock)  {
+        
         self.successPurchasedtBlock(productIdetifier);
     } else {
         [[NSNotificationCenter defaultCenter] postNotificationName:kSuccessPurchaseNotificationKey object:productIdetifier];
