@@ -40,7 +40,7 @@
 #import "IAPProductsController.h"
 #import "IAPPurchaseController.h"
 
-typedef void(^SuccessResponse)(void);
+typedef void(^SuccessResponse)(NSString *purchasedProductAIPIdentifier);
 typedef void(^FailureResponse)(NSError *error);
 
 @interface InAppPurchaseManager : NSObject 

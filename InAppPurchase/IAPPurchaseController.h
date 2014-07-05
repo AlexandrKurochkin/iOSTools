@@ -42,7 +42,7 @@
 FOUNDATION_EXPORT NSString *const kSuccessPurchaseNotificationKey;
 FOUNDATION_EXPORT NSString *const kFailurePurchaseNotificationKey;
 
-typedef void(^SuccessPurchasedtBlock)(NSString *transactionId);
+typedef void(^SuccessPurchasedtBlock)(NSString *productIdetifier);
 typedef void(^FailurePurchasedBlock)(NSError *error);
 
 

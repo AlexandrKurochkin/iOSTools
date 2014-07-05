@@ -74,10 +74,11 @@
     [self.productsController fetchProduct:productIdentifier
                        withSuccessHandler:^(SKProduct *successProducts) {
                            DLog(@"");
-                           [self.purchaseController purchaseProduct:successProducts quantity:quantity
-                                successPurchaseHandler:^(NSString *transactionId) {
-                                    successHandler();
-                           } failurePurchaseHandler:failureHandler];
+                           [self.purchaseController purchaseProduct:successProducts
+                                                           quantity:quantity
+                                             successPurchaseHandler:successHandler
+                                             failurePurchaseHandler:failureHandler];
+                           
                        } failureHandeler:failureHandler];
 }
 
