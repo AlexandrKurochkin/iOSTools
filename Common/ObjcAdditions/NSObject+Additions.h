@@ -51,5 +51,6 @@
 - (id)createClone;
 - (void)printAllData;
 - (BOOL)isSimilar:(id)obj;
+- (void)printObjectSize;
 
 @end

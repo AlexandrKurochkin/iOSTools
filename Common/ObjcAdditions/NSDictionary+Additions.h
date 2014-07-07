@@ -1,8 +1,5 @@
 //
-//  IAPPurchaseController.h
-//  https://github.com/AlexandrKurochkin/iOSTools
-//  Licensed under the terms of the BSD License, as specified below.
-//
+//  NSDictionary+Additions.h
 /*
  Copyright (c) 2014, Alexandr Kurochkin
  
@@ -34,27 +31,10 @@
  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-
 #import <Foundation/Foundation.h>
-#import <StoreKit/StoreKit.h>
 
+@interface NSDictionary (Additions)
 
-FOUNDATION_EXPORT NSString *const kSuccessPurchaseNotificationKey;
-FOUNDATION_EXPORT NSString *const kFailurePurchaseNotificationKey;
-
-typedef void(^SuccessPurchasedtBlock)(NSString *productIdetifier);
-typedef void(^FailurePurchasedBlock)(NSError *error);
-//
-//@class IAPPurchaseController;
-//
-//@protocol IAPPurchaseDelegate <NSObject>
-//
-//- (void)purchaseController:(IAPPurchaseController *)purchaseController
-//
-//@end
-
-@interface IAPPurchaseController : NSObject
-
-- (void)purchaseProduct:(SKProduct *)product quantity:(NSInteger)quantity successPurchaseHandler:(SuccessPurchasedtBlock)successPurchaseHandler failurePurchaseHandler:(FailurePurchasedBlock)failurePurchaseHandler;
+- (id)lastObject;
 
 @end

@@ -153,19 +153,23 @@ NSString *const kFailurePurchaseBlock           = @"kFailurePurchaseBlock";
 
 - (void)paymentTransactionStatePurchasedHandler:(SKPaymentTransaction *)transaction {
     
+    [[SKPaymentQueue defaultQueue]finishTransaction:transaction];
     NSString *productIdetifier = transaction.payment.productIdentifier;
     if (self.successPurchasedtBlock)  {
-        
         self.successPurchasedtBlock(productIdetifier);
     } else {
         [[NSNotificationCenter defaultCenter] postNotificationName:kSuccessPurchaseNotificationKey object:productIdetifier];
     }
-    [[SKPaymentQueue defaultQueue]finishTransaction:transaction];
+    
 }
 
 - (void)paymentTransactionStateFailedHandler:(SKPaymentTransaction *)transaction {
     
     [transaction.error print];
+    
+    if (transaction.error.code == 2) {
+        [[SKPaymentQueue defaultQueue]finishTransaction:transaction];
+    }
     
     if (self.failurePurchasedBlock) {
         self.failurePurchasedBlock(transaction.error);
@@ -173,9 +177,6 @@ NSString *const kFailurePurchaseBlock           = @"kFailurePurchaseBlock";
         [[NSNotificationCenter defaultCenter] postNotificationName:kFailurePurchaseNotificationKey object:transaction.error];
     }
     
-    if (transaction.error.code == 2) {
-        [[SKPaymentQueue defaultQueue]finishTransaction:transaction];
-    }
 }
 
 - (void)paymentTransactionStateRestored:(SKPaymentTransaction *)transaction {

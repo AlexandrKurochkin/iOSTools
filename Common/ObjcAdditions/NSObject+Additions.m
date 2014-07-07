@@ -36,6 +36,7 @@
 
 #import "NSObject+Additions.h"
 #import <objc/runtime.h>
+#import <malloc/malloc.h>
 
 @implementation NSObject (Additions)
 
@@ -181,6 +182,10 @@
 
 - (void)printAllData {
     DLog(@"<%@: %@> \nProperties: \n%@", NSStringFromClass([self class]), [NSString stringWithFormat:@"%p",self], [self dictionaryWithProperties]);
+}
+
+- (void)printObjectSize {
+    NSLog(@"<%@> size : %zd", self, malloc_size((__bridge const void *)(self)));
 }
 
 @end
