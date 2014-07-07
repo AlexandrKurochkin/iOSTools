@@ -111,6 +111,11 @@
     [AlertManager showSimpleAlertWithTitle:kWheninTitle message:kNewPswdChangedSuccessMessage cancelButtonTitle:kOkButton];
 }
 
-
++ (void)showAllertAboutDevelopmentPart {
+    [AlertManager showSimpleAlertWithTitle:kWarning
+                                   message:kThisPartInDevelopment
+                         cancelButtonTitle:kOkButton];
+    
+}
 
 @end

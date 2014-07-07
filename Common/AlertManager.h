@@ -36,6 +36,7 @@
 
 #import <Foundation/Foundation.h>
 
+#define kWarning            @"Warning"
 #define kErrorTitle         @"Error"
 #define kOkButton           @"Ok"
 
@@ -55,6 +56,10 @@
 #define kNewPswdSmallLenghtMessage          @"Length of password should be 6 and more characters."
 #define kNewCurrentPswdVoidMessage          @"Current password is void."
 #define kNewPswdChangedSuccessMessage       @"Password changed successfully."
+
+//This part in development
+#define kThisPartInDevelopment              @"Sorry. This part is in the development"
+
 
 
 @interface AlertManager : NSObject
@@ -81,6 +86,10 @@
 + (void)showAllertAboutSmallPswdLength;
 + (void)showAllertAboutVoidCurrentPswd;
 + (void)showAllertAboutSuccessChangedPswd;
+
+//This part in development
+
++(void)showAllertAboutDevelopmentPart;
 
 
 
