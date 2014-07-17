@@ -56,5 +56,10 @@
     return [NSArray arrayWithArray:mArr];
 }
 
+//- (BOOL)isObjectInArray:(id)obj {
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"firstName==%@ OR lastName==%@",@"Ken",@"Ken"];
+//    NSArray *results = [self filteredArrayUsingPredicate:predicate];
+//}
+
 
 @end
