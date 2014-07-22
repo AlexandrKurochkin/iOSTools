@@ -167,7 +167,7 @@ NSString *const kFailurePurchaseBlock           = @"kFailurePurchaseBlock";
     
     [transaction.error print];
     
-    if (transaction.error.code == 2) {
+    if (transaction.error.code == 2 || transaction.error.code == 0) {
         [[SKPaymentQueue defaultQueue]finishTransaction:transaction];
     }
     

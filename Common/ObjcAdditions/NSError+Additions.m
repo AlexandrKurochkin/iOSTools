@@ -39,9 +39,7 @@
 @implementation NSError (Additions)
 
 - (void)print {
-    NSLog(@"error code: %ld", (long)[self code]);
-    NSLog(@"error domain: %@", [self domain]);
-    NSLog(@"error userInfo: %@", [self userInfo]);
+    NSLog(@"error: \n\t\t code: %ld \n\t\t domain: %@ \n\t\t userInfo: %@", (long)[self code], [self domain], [self userInfo]);
 }
 
 @end
