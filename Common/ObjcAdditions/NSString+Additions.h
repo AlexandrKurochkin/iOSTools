@@ -50,5 +50,7 @@
 - (BOOL)containsString:(NSString *)substring;
 - (NSString *)MD5;
 - (NSURL *)httpSchemeLink;
+- (NSString *)httpSchemeString;
+- (BOOL)isValidAsURL;
 
 @end

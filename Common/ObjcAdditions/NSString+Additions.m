@@ -102,31 +102,26 @@
     return found;
 }
 
-- (NSURL *)httpSchemeLink {
-    NSURL *returnLink;
+- (NSString *)httpSchemeString {
+    NSString *returnLink;
     
     NSRange httpRange = [self rangeOfString : @"http://"];
     NSRange httpsRange = [self rangeOfString : @"https://"];
     
-    if (httpRange.location == 0 || httpsRange.location == 0) {
-        returnLink = [NSURL URLWithString:self];
-    } else {
-        returnLink = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@", self]];
-    }
+    returnLink = (httpRange.location == 0 || httpsRange.location == 0) ? self : [NSString stringWithFormat:@"http://%@", self];
     return returnLink;
 }
 
-//- (void)isLinkValid:(NSString *)candidate {
-//    
-//    NSURL *candidateURL = [NSURL URLWithString:candidate];
-//    // WARNING > "test" is an URL according to RFCs, being just a path
-//    // so you still should check scheme and all other NSURL attributes you need
-//    if (candidateURL && candidateURL.scheme && candidateURL.host) {
-//        // candidate is a well-formed url with:
-//        //  - a scheme (like http://)
-//        //  - a host (like stackoverflow.com)
-//    }
-//}
+- (NSURL *)httpSchemeLink {
+    return [NSURL URLWithString:self.httpSchemeString];
+}
+
+- (BOOL)isValidAsURL {
+    NSString *urlRegEx =
+    @"(http|https)://((\\w)*|([0-9]*)|([-|_])*)+([\\.|/]((\\w)*|([0-9]*)|([-|_])*))+";
+    NSPredicate *urlTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", urlRegEx];
+    return [urlTest evaluateWithObject:self];
+}
 
 
 @end

@@ -132,8 +132,8 @@ handlingRequestSuccessSelector:(SEL)requestSuccessSelector
                                       if (error != nil) {
                                           if (sender && requestErrorSelector) {
                                               SuppressPerformSelectorLeakWarning(
-                                              [sender performSelector:requestErrorSelector withObject:error];
-                                            );
+                                                                                 [sender performSelector:requestErrorSelector withObject:error];
+                                                                                 );
                                           }
                                       } else {
                                           [self getUserDataForSender:sender handlingRequestSuccessSelector:requestSuccessSelector handlingRequestErrorSelector:requestErrorSelector];
@@ -143,7 +143,7 @@ handlingRequestSuccessSelector:(SEL)requestSuccessSelector
 }
 
 - (void)getUserDataForSender:(id)sender handlingRequestSuccessSelector:(SEL)requestSuccessSelector
-   handlingRequestErrorSelector:(SEL)requestErrorSelector {
+handlingRequestErrorSelector:(SEL)requestErrorSelector {
     
     [FBRequestConnection startWithGraphPath:@"me"
                           completionHandler:^(FBRequestConnection *connection,
@@ -153,14 +153,14 @@ handlingRequestSuccessSelector:(SEL)requestSuccessSelector
                                   [error print];
                                   if (sender && requestErrorSelector) {
                                       SuppressPerformSelectorLeakWarning(
-                                      [sender performSelector:requestErrorSelector withObject:error];
+                                                                         [sender performSelector:requestErrorSelector withObject:error];
                                                                          );
                                   }
                               } else {
                                   NSLog(@"userInfo: %@", user);
                                   if (sender && requestSuccessSelector) {
                                       SuppressPerformSelectorLeakWarning(
-                                      [sender performSelector:requestSuccessSelector withObject:user];
+                                                                         [sender performSelector:requestSuccessSelector withObject:user];
                                                                          );
                                   }
                               }
@@ -170,35 +170,38 @@ handlingRequestSuccessSelector:(SEL)requestSuccessSelector
 
 #pragma mark - post data to facebook
 
-
 - (void)postDataWithLink:(NSString *)link
                  picture:(NSString *)picture
                     name:(NSString *)name
                  caption:(NSString *)caption
              description:(NSString *)description {
-
     
+    //    //Validate and create FB share parameters
     
-    //Validate and create FB share parameters
+    NSString *updatedLink = link.httpSchemeString;
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    dict[@"link"]               = (link) ? link : kDefaultLink;
-    dict[@"picture"]            = picture;
     dict[@"name"]               = name;
     dict[@"caption"]            = caption;
     dict[@"description"]        = description;
+    dict[@"link"]               = (updatedLink.isValidAsURL) ? updatedLink : kDefaultLink;
+    dict[@"picture"]            = picture;
     
-//Test worked post parametrs
-//    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-//                                   @"Sharing Tutorial", @"name",
-//                                   @"Build great social apps and get more installs.", @"caption",
-//                                   @"Allow your users to share stories on Facebook from your app using the iOS SDK.", @"description",
-//                                   @"https://developers.facebook.com/docs/ios/share/", @"link",
-//                                   @"http://i.imgur.com/g3Qc1HN.png", @"picture",
-//                                   nil];
-
+    
+    
+    DLog(@"Post Params: %@", dict);
+    
+    //Test worked post parametrs
+    //    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+    //                                   @"Sharing Tutorial", @"name",
+    //                                   @"Build great social apps and get more installs.", @"caption",
+    //                                   @"Allow your users to share stories on Facebook from your app using the iOS SDK.", @"description",
+    //                                   @"https://developers.facebook.com/docs/ios/share/", @"link",
+    //                                   @"http://i.imgur.com/g3Qc1HN.png", @"picture",
+    //                                   nil];
+    
     //Use posting from WebView because now posting from app have a problem
-    [self shareToFacebookFromWebView:dict];
-//    [self shareWithParams:dict];
+    //    [self shareToFacebookFromWebView:dict];
+    [self shareWithParams:dict];
 }
 
 
@@ -216,13 +219,13 @@ handlingRequestSuccessSelector:(SEL)requestSuccessSelector
 
 - (void)shareToFacebookFromFBApp:(NSDictionary *)parametrs {
     FBLinkShareParams *params = [FBLinkShareParams createWithParametrs:parametrs];
+    
+    //    BOOL b = [FBDialogs canPresentShareDialogWithParams:params];
     [FBDialogs presentShareDialogWithParams:params
                                 clientState:nil
                                     handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
                                         if(error) {
-                                            // An error occurred, we need to handle the error
-                                            // See: https://developers.facebook.com/docs/ios/errors
-                                            NSLog(@"Error publishing story: %@", error.description);
+                                            [self errorHandler:error];
                                         } else {
                                             // Success
                                             NSLog(@"result %@", results);
@@ -235,9 +238,7 @@ handlingRequestSuccessSelector:(SEL)requestSuccessSelector
                                            parameters:parametrs
                                               handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
                                                   if (error) {
-                                                      // An error occurred, we need to handle the error
-                                                      // See: https://developers.facebook.com/docs/ios/errors
-                                                      NSLog(@"Error publishing story: %@", error.description);
+                                                      [self errorHandler:error];
                                                   } else {
                                                       if (result == FBWebDialogResultDialogNotCompleted) {
                                                           // User canceled.
@@ -261,6 +262,20 @@ handlingRequestSuccessSelector:(SEL)requestSuccessSelector
 }
 
 #pragma mark - additional functions
+
+- (void)errorHandler:(NSError *)error {
+    // An error occurred, we need to handle the error
+    // See: https://developers.facebook.com/docs/ios/errors
+    //                                            NSLog(@"Error publishing story: %@", error.description);
+    DLog(@"FaceBook Error:");
+    [error print];
+    
+    if ([FBErrorUtility shouldNotifyUserForError:error]) {
+        NSString *userMessageForError = [FBErrorUtility userMessageForError:error];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Facebook" message:userMessageForError delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+    }
+}
 
 - (NSDictionary*)parseURLParams:(NSString *)query {
     NSArray *pairs = [query componentsSeparatedByString:@"&"];
