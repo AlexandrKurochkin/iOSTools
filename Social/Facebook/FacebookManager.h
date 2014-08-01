@@ -43,11 +43,20 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 
+typedef void(^FBMSuccessFetchedUserInfo)(id <FBGraphUser> user);
+typedef void(^FBMFailure)(NSError *error);
+
+
 @interface FacebookManager : NSObject 
 
 @property (nonatomic, strong, readwrite) FBSession *session;
 
 + (instancetype)sharedManager;
+
+
+- (void)fetchUserInfoWithSuccessHandler:(FBMSuccessFetchedUserInfo)successHandler
+                         failureHandler:(FBMFailure)failureHandler;
+
 
 - (void)fetchUserInfoForSender:(id)sender
 handlingRequestSuccessSelector:(SEL)requestSuccessSelector
