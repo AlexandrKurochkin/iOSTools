@@ -46,7 +46,9 @@
 - (BOOL)isContainSubstring:(NSString *)substring;
 - (BOOL)isNaturalNumber;
 - (BOOL)isValidPhoneNumber;
-- (NSString *)MD5;
 
+- (BOOL)containsString:(NSString *)substring;
+- (NSString *)MD5;
+- (NSURL *)httpSchemeLink;
 
 @end

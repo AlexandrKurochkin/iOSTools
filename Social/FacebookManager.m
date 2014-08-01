@@ -36,15 +36,53 @@
 
 #import "FacebookManager.h"
 
-@interface FacebookManager ()
+NSString *const kDefultLink    = @"http://alex-kurochkin.com/";
 
-@property (nonatomic, retain, readwrite) NSDictionary *parametrs;
+@interface FBLinkShareParams (Additions)
+
+- (NSDictionary *)dictionary;
+
+@end
+
+@implementation FBLinkShareParams (Additions)
+
++ (instancetype)createWithParametrs:(NSDictionary *)parametrs {
+    FBLinkShareParams *params = [[FBLinkShareParams alloc] init];
+    
+    params.name             = parametrs[@"name"];
+    params.linkDescription  = parametrs[@"description"];
+    params.caption          = parametrs[@"caption"];
+    params.link             = [parametrs[@"link"] httpSchemeLink];
+    params.picture          = [parametrs[@"picture"] httpSchemeLink];
+
+    return params;
+
+}
+
+- (NSDictionary *)dictionary {
+    
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
+    if (self.link)          [dict setObject:self.link forKey:@"link"];
+    if (self.picture)       [dict setObject:self.picture forKey:@"picture"];
+    if (self.name)          [dict setObject:self.name forKey:@"name"];
+    if (self.caption)       [dict setObject:self.caption forKey:@"caption"];
+    if (self.linkDescription)   [dict setObject:self.linkDescription forKey:@"description"];
+    
+    
+    return [NSDictionary dictionaryWithDictionary:dict];
+//    return @{@"name":self.name, @"link":self.link, @"picture":self.picture, @"caption":self.caption, @"description":self.description};
+}
+
+@end
+
+
+@interface FacebookManager ()
 
 @end
 
 @implementation FacebookManager
 
-@synthesize parametrs;
 
 static FacebookManager *sharedInstance = nil;
 
@@ -55,40 +93,12 @@ static FacebookManager *sharedInstance = nil;
 	return sharedInstance;
 }
 
-- (id)init {
-    self = [super init];
-    if (self) {
-//        self.session = [[[FBSession alloc] init]autorelease];
-//        [FBSession setActiveSession:self.session];
-        
-//        [FBSession openActiveSessionWithReadPermissions:@[@"basic_info", @"email", @"user_birthday"]
-//                                           allowLoginUI:YES
-//                                      completionHandler:^(FBSession *session,
-//                                                          FBSessionState status,
-//                                                          NSError *error) {
-////                                          
-////                                          if (error != nil) {
-////                                              if (sender && requestErrorSelector) {
-////                                                  [sender performSelector:requestErrorSelector withObject:error];
-////                                              }
-////                                          } else {
-////                                              [self getUserDataForSender:sender handlingRequestSuccessSelector:requestSuccessSelector handlingRequestErrorSelector:requestErrorSelector];
-////                                          }
-//                                          
-//                                      }];
-    }
-    return self;
-}
+ARC_DEALLOC
 
-- (void)dealloc {
-    self.parametrs = nil;
-    self.session = nil;
-}
 
 #pragma mark - Facebook life cicle
 
 - (BOOL)handleOpenURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication {
-//    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication withSession:self.session];
     return  [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
 }
 
@@ -97,7 +107,6 @@ static FacebookManager *sharedInstance = nil;
 }
 
 - (void)appDidBecomeActive {
-//    [FBAppCall handleDidBecomeActiveWithSession:self.session];
     [FBAppCall handleDidBecomeActive];
 }
 
@@ -155,67 +164,93 @@ handlingRequestSuccessSelector:(SEL)requestSuccessSelector
 
 #pragma mark - post data to facebook
 
+
 - (void)postDataWithLink:(NSString *)link
                  picture:(NSString *)picture
                     name:(NSString *)name
                  caption:(NSString *)caption
              description:(NSString *)description {
-    // Ask for publish_actions permissions in context
-   self.parametrs = @{
-      @"link" : link,
-      @"picture" : picture,
-      @"name" : name,
-      @"caption" : caption,
-      @"description" : description
-      };
+
+    //Validate and create FB share parameters
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    dict[@"link"]               = (link) ? link : kDefultLink;
+    dict[@"picture"]            = picture;
+    dict[@"name"]               = name;
+    dict[@"caption"]            = caption;
+    dict[@"description"]        = description;
+    [self shareWithParams:dict];
+}
+
+
+- (void)shareWithParams:(NSDictionary *)paramsd {
     
-    [[FBSession activeSession] closeAndClearTokenInformation];
-//    if ([FBSession.activeSession.permissions
-//         indexOfObject:@"publish_actions"] == NSNotFound) {
-        // Permission hasn't been granted, so ask for publish_actions
-        [FBSession openActiveSessionWithPublishPermissions:@[@"publish_actions"]
-                                           defaultAudience:FBSessionDefaultAudienceFriends
-                                              allowLoginUI:YES
-                                         completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
-                                             if (FBSession.activeSession.isOpen && !error) {
-                                                 // Publish the story if permission was granted
-                                                 [self publishStory:self.parametrs];
-                                             }
-                                         }];
-//    } else {
-//        [self publishStory: self.parametrs];
-//    }
+    if ([FBDialogs canPresentShareDialog]) {
+        FBLinkShareParams *params = [FBLinkShareParams createWithParametrs:paramsd];
+        [FBDialogs presentShareDialogWithParams:params
+                                  clientState:nil
+                                      handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
+                                          if(error) {
+                                              // An error occurred, we need to handle the error
+                                              // See: https://developers.facebook.com/docs/ios/errors
+                                              NSLog(@"Error publishing story: %@", error.description);
+                                          } else {
+                                              // Success
+                                              NSLog(@"result %@", results);
+                                          }
+                                      }];
+
+        
+        // If the Facebook app is NOT installed and we can't present the share dialog
+    } else {
+        // FALLBACK: publish just a link using the Feed dialog
+        // Show the feed dialog
+        
+        [FBWebDialogs presentFeedDialogModallyWithSession:nil
+                                               parameters:paramsd
+                                                  handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
+                                                      if (error) {
+                                                          // An error occurred, we need to handle the error
+                                                          // See: https://developers.facebook.com/docs/ios/errors
+                                                          NSLog(@"Error publishing story: %@", error.description);
+                                                      } else {
+                                                          if (result == FBWebDialogResultDialogNotCompleted) {
+                                                              // User canceled.
+                                                              NSLog(@"User cancelled.");
+                                                          } else {
+                                                              // Handle the publish feed callback
+                                                              NSDictionary *urlParams = [self parseURLParams:[resultURL query]];
+                                                              
+                                                              if (![urlParams valueForKey:@"post_id"]) {
+                                                                  // User canceled.
+                                                                  NSLog(@"User cancelled.");
+                                                                  
+                                                              } else {
+                                                                  // User clicked the Share button
+                                                                  NSString *result = [NSString stringWithFormat: @"Posted story, id: %@", [urlParams valueForKey:@"post_id"]];
+                                                                  NSLog(@"result %@", result);
+                                                              }
+                                                          }
+                                                      }
+                                                  }];
+    }
 }
 
-- (void)publishStory:(NSDictionary *)parameters  {
-    [FBRequestConnection
-     startWithGraphPath:@"me/feed"
-     parameters:parameters
-     HTTPMethod:@"POST"
-     completionHandler:^(FBRequestConnection *connection,
-                         id result,
-                         NSError *error) {
-         NSString *alertText;
-         if (error) {
-             alertText = [NSString stringWithFormat:
-                          @"error: domain = %@, code = %ld",
-                          error.domain, (long)error.code];
-         } else {
-             alertText = @"Success";
-             NSLog(@"Posted action, id: %@",
-                   result[@"id"]);
-         }
-         DLog(@"%@", alertText);
-         // Show the result in an alert
-//         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Facebook result"
-//                                     message:alertText
-//                                    delegate:self
-//                           cancelButtonTitle:@"OK!"
-//                           otherButtonTitles:nil];
-//         [alert show];
-//         [alert release];
-     }];
-}
+#pragma mark - additional functions
 
+- (NSDictionary*)parseURLParams:(NSString *)query {
+    NSArray *pairs = [query componentsSeparatedByString:@"&"];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    for (NSString *pair in pairs) {
+        NSArray *kv = [pair componentsSeparatedByString:@"="];
+        NSString *val =
+        [kv[1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        params[kv[0]] = val;
+    }
+    return params;
+}
 
 @end
+
+
+
+

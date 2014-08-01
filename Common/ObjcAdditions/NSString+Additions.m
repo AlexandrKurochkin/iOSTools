@@ -96,4 +96,37 @@
     return output;
 }
 
+- (BOOL)containsString:(NSString *)substring {
+    NSRange range = [self rangeOfString : substring];
+    BOOL found = (range.location != NSNotFound);
+    return found;
+}
+
+- (NSURL *)httpSchemeLink {
+    NSURL *returnLink;
+    
+    NSRange httpRange = [self rangeOfString : @"http://"];
+    NSRange httpsRange = [self rangeOfString : @"https://"];
+    
+    if (httpRange.location == 0 || httpsRange.location == 0) {
+        returnLink = [NSURL URLWithString:self];
+    } else {
+        returnLink = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@", self]];
+    }
+    return returnLink;
+}
+
+//- (void)isLinkValid:(NSString *)candidate {
+//    
+//    NSURL *candidateURL = [NSURL URLWithString:candidate];
+//    // WARNING > "test" is an URL according to RFCs, being just a path
+//    // so you still should check scheme and all other NSURL attributes you need
+//    if (candidateURL && candidateURL.scheme && candidateURL.host) {
+//        // candidate is a well-formed url with:
+//        //  - a scheme (like http://)
+//        //  - a host (like stackoverflow.com)
+//    }
+//}
+
+
 @end

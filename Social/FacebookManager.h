@@ -39,7 +39,7 @@
 
 @interface FacebookManager : NSObject 
 
-@property (nonatomic, retain, readwrite) FBSession *session;
+@property (nonatomic, strong, readwrite) FBSession *session;
 
 + (instancetype)sharedManager;
 
@@ -47,6 +47,9 @@
 handlingRequestSuccessSelector:(SEL)requestSuccessSelector
 handlingRequestErrorSelector:(SEL)requestErrorSelector;
 
+
+
+/**important Link Should be valid else you will see my home page**/
 - (void)postDataWithLink:(NSString *)link
                  picture:(NSString *)picture
                     name:(NSString *)name
