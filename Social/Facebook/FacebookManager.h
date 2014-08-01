@@ -57,13 +57,6 @@ typedef void(^FBMFailure)(NSError *error);
 - (void)fetchUserInfoWithSuccessHandler:(FBMSuccessFetchedUserInfo)successHandler
                          failureHandler:(FBMFailure)failureHandler;
 
-
-- (void)fetchUserInfoForSender:(id)sender
-handlingRequestSuccessSelector:(SEL)requestSuccessSelector
-handlingRequestErrorSelector:(SEL)requestErrorSelector;
-
-
-
 /**important Link Should be valid else you will see my home page**/
 - (void)postDataWithLink:(NSString *)link
                  picture:(NSString *)picture

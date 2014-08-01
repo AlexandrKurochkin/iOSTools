@@ -108,64 +108,10 @@ ARC_DEALLOC
     
     [[FBSession activeSession] closeAndClearTokenInformation];
     [FBSession setActiveSession:nil];
-    [FBSession openActiveSessionWithReadPermissions:@[@"basic_info", @"email", @"user_birthday"]
+    [FBSession openActiveSessionWithReadPermissions:@[@"public_profile'", @"email", @"user_birthday"]
                                        allowLoginUI:YES
                                   completionHandler:sessionStateHandler];
     
-}
-
-
-
-
-- (void)fetchUserInfoForSender:(id)sender
-handlingRequestSuccessSelector:(SEL)requestSuccessSelector
-  handlingRequestErrorSelector:(SEL)requestErrorSelector {
-    
-    [[FBSession activeSession] closeAndClearTokenInformation];
-    [FBSession setActiveSession:nil];
-    [FBSession openActiveSessionWithReadPermissions:@[@"basic_info", @"email", @"user_birthday"]
-                                       allowLoginUI:YES
-                                  completionHandler:^(FBSession *session,
-                                                      FBSessionState status,
-                                                      NSError *error) {
-                                      NSLog(@"s2: %@",session);
-                                      if (error != nil) {
-                                          if (sender && requestErrorSelector) {
-                                              SuppressPerformSelectorLeakWarning(
-                                                                                 [sender performSelector:requestErrorSelector withObject:error];
-                                                                                 );
-                                          }
-                                      } else {
-                                          [self getUserDataForSender:sender handlingRequestSuccessSelector:requestSuccessSelector handlingRequestErrorSelector:requestErrorSelector];
-                                      }
-                                      
-                                  }];
-}
-
-- (void)getUserDataForSender:(id)sender handlingRequestSuccessSelector:(SEL)requestSuccessSelector
-handlingRequestErrorSelector:(SEL)requestErrorSelector {
-    
-    [FBRequestConnection startWithGraphPath:@"me"
-                          completionHandler:^(FBRequestConnection *connection,
-                                              id <FBGraphUser> user,
-                                              NSError *error) {
-                              if (error != nil) {
-                                  [error print];
-                                  if (sender && requestErrorSelector) {
-                                      SuppressPerformSelectorLeakWarning(
-                                                                         [sender performSelector:requestErrorSelector withObject:error];
-                                                                         );
-                                  }
-                              } else {
-                                  NSLog(@"userInfo: %@", user);
-                                  if (sender && requestSuccessSelector) {
-                                      SuppressPerformSelectorLeakWarning(
-                                                                         [sender performSelector:requestSuccessSelector withObject:user];
-                                                                         );
-                                  }
-                              }
-                              
-                          }];
 }
 
 #pragma mark - post data to facebook
