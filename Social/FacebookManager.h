@@ -34,6 +34,12 @@
  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+
+
+//******************************************************************//
+//** IMPORTANT:This Facebook Manager based on Facebook SDK v3.16.1 *//
+//******************************************************************//
+
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 
@@ -60,8 +66,6 @@ handlingRequestErrorSelector:(SEL)requestErrorSelector;
 - (BOOL)handleOpenURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication;
 - (void)appWillTerminate;
 - (void)appDidBecomeActive;
-
-
 
 
 @end
