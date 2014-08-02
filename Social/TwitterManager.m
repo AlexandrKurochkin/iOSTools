@@ -72,7 +72,7 @@
                     
                     SLRequest* twitterRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter
                                                                    requestMethod:SLRequestMethodPOST
-                                                                             URL:[NSURL URLWithString:@"http://api.twitter.com/1/statuses/update.json"]
+                                                                             URL:[NSURL URLWithString:@"https://api.twitter.com/1/statuses/update.json"]
                                                                       parameters:@{@"status": post}];
                     
                     [twitterRequest setAccount:twitterAccount];
@@ -104,7 +104,11 @@
 }
 
 + (void)postImage:(UIImage *)image withStatus:(NSString *)status {
-    [[TwitterManager sharedManager] postImage:image withStatus:status];
+    if (image) {
+        [[TwitterManager sharedManager] postImage:image withStatus:status];
+    } else {
+        [self twitMessage:status];
+    }
 }
 
 - (void)postImage:(UIImage *)image withStatus:(NSString *)status {
@@ -125,6 +129,7 @@
                 NSLog(@"[SUCCESS!] Created Tweet with ID: %@", postResponseData[@"id_str"]);
                 alertText = @"Tweeted success";
             } else {
+                [error print];
                 alertText = [NSString stringWithFormat:@"[ERROR] Server responded: status code %ld %@", (long)statusCode,
                              [NSHTTPURLResponse localizedStringForStatusCode:statusCode]];
                 NSLog(@"%@", alertText);
