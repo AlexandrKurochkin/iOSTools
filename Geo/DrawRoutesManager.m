@@ -241,6 +241,8 @@ static DrawRoutesManager *sharedInstance = nil;
 
 - (void)centerMap:(MKMapView *)mapView forRoutePoints:(NSArray *)arrRoutePoints {
     
+    [mapView printFrame];
+    
     if (arrRoutePoints != nil) {
         if (arrRoutePoints.count > 0) {
             MKCoordinateRegion region;
@@ -262,8 +264,14 @@ static DrawRoutesManager *sharedInstance = nil;
             
             region.center.latitude     = (maxLat + minLat) / 2;
             region.center.longitude    = (maxLon + minLon) / 2;
-            region.span.latitudeDelta  = maxLat - minLat;
-            region.span.longitudeDelta = maxLon - minLon;
+            
+            //TODO: implement send parametr as border percent.
+            CLLocationDegrees difLat = maxLat - minLat;
+            CLLocationDegrees difLon = maxLon - minLon;
+            CLLocationDegrees border = 0.1;
+            
+            region.span.latitudeDelta  = difLat + difLat * border;
+            region.span.longitudeDelta = difLon + difLon * border;
             
             
             [mapView setRegion:[mapView regionThatFits:region] animated:YES];
