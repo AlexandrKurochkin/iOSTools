@@ -116,7 +116,7 @@ static DrawRoutesManager *sharedInstance = nil;
 }
 
 - (void)centerMapView:(MKMapView *)mapView {
-    [self centerMap:mapView forRoutePoints:self.arrayPoints];
+    [self centerMap:mapView forRoutePoints:self.arrayPoints borderPercent:1];
 }
 
 #pragma mark -
@@ -239,9 +239,7 @@ static DrawRoutesManager *sharedInstance = nil;
     }
 }
 
-- (void)centerMap:(MKMapView *)mapView forRoutePoints:(NSArray *)arrRoutePoints {
-    
-    [mapView printFrame];
+- (void)centerMap:(MKMapView *)mapView forRoutePoints:(NSArray *)arrRoutePoints borderPercent:(double)borderPercent {
     
     if (arrRoutePoints != nil) {
         if (arrRoutePoints.count > 0) {
@@ -268,7 +266,7 @@ static DrawRoutesManager *sharedInstance = nil;
             //TODO: implement send parametr as border percent.
             CLLocationDegrees difLat = maxLat - minLat;
             CLLocationDegrees difLon = maxLon - minLon;
-            CLLocationDegrees border = 0.1;
+            CLLocationDegrees border = borderPercent;
             
             region.span.latitudeDelta  = difLat + difLat * border;
             region.span.longitudeDelta = difLon + difLon * border;
