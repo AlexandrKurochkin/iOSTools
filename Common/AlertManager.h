@@ -42,7 +42,7 @@
 
 //Common messages
 #define kNoInternetMessage                  @"No internet connection. Please try later"
-#define kWrongLengthMessage                 @"Lenght of %@ should be more than %ld"
+#define kWrongLengthMessage                 @"Length of %@ should be more than %ld"
 #define kEmailValidatiomMessage             @"Wrong email."
 #define kPhoneValidatiomMessage             @"Wrong phone number."
 
