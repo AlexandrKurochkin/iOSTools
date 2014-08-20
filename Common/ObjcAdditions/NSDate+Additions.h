@@ -43,5 +43,6 @@
 
 - (NSString *)dateStringForFormat:(NSString *)format;
 - (BOOL)isValideForMinAge:(NSInteger)minAge;
+- (NSComparisonResult)compareWithoutSeconds:(NSDate *)aDate;
 
 @end

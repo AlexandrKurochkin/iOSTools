@@ -49,9 +49,11 @@
 }
 
 + (void)showAllertForError:(NSError *)error {
-    if (error.code == -1009) {
-        [AlertManager
-         showAllertAboutNoInternetConnection];
+    if (
+        (error.code == -1009) ||
+        (error.code == 306 && [error.domain isEqualToString:(__bridge NSString *)kCFErrorDomainCFNetwork])
+        ) {
+        [AlertManager showAllertAboutNoInternetConnection];
     } else {
 //        NSString *debugErrorMsg = [NSString stringWithFormat:@"code: %d %@", error.code, error.domain];
 //        NSString *errorMsg = [NSString stringWithFormat:@"%@", error.domain];

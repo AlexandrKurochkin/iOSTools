@@ -41,7 +41,7 @@
 #define kOkButton           @"Ok"
 
 //Common messages
-#define kNoInternetMessage                  @"No internet connection. Please try later"
+#define kNoInternetMessage                  @"No internet connection. Please check your internet settings and try again."
 #define kWrongLengthMessage                 @"Length of %@ should be more than %ld"
 #define kEmailValidatiomMessage             @"Wrong email."
 #define kPhoneValidatiomMessage             @"Wrong phone number."

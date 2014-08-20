@@ -73,4 +73,14 @@
     return dateStr;
 }
 
+- (NSComparisonResult)compareWithoutSeconds:(NSDate *)aDate {
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    
+    NSCalendarUnit param = NSEraCalendarUnit | NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit;
+    NSDateComponents *date1Components = [cal components:param fromDate:self];
+    NSDateComponents *date2Components = [cal components:param fromDate:aDate];
+    NSComparisonResult comparison = [[cal dateFromComponents:date1Components] compare:[cal dateFromComponents:date2Components]];
+    return comparison;
+}
+
 @end
