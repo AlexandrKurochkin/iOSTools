@@ -49,14 +49,14 @@
 
 //User data messages
 #define kBirthdayValidationMessage          @"Wrong date of birth. You must be at least %d years old."
-#define kRadiusValidatiomMessage            @"Radius should contain only digital and should be more than 0"
+#define kRadiusValidatiomMessage            @"Radius should contain only digits and should be more than 0."
 
 //Password messages
 #define kWrongPswdMessage                   @"Wrong Password."
 #define kNewPswdNoMatxgMessage              @"New password doesn't match."
 #define kNewPswdSmallLenghtMessage          @"Length of password should be 6 and more characters."
 #define kNewCurrentPswdVoidMessage          @"Current password is empty."
-#define kNewPswdChangedSuccessMessage       @"Password changed successfully."
+#define kNewPswdChangedSuccessMessage       @"Password was changed successfully."
 
 //This part in development
 #define kThisPartInDevelopment              @"Sorry. This part is in the development"
