@@ -45,6 +45,7 @@
 #define kWrongLengthMessage                 @"Length of %@ should be more than %ld"
 #define kEmailValidatiomMessage             @"Wrong email."
 #define kPhoneValidatiomMessage             @"Wrong phone number."
+#define kValueIsRequiredAndCannotBeEmpty    @"%@ is required and can't be empty."
 
 //User data messages
 #define kBirthdayValidationMessage          @"Wrong date of birth. You must be at least %d years old."
@@ -54,7 +55,7 @@
 #define kWrongPswdMessage                   @"Wrong Password."
 #define kNewPswdNoMatxgMessage              @"New password doesn't match."
 #define kNewPswdSmallLenghtMessage          @"Length of password should be 6 and more characters."
-#define kNewCurrentPswdVoidMessage          @"Current password is void."
+#define kNewCurrentPswdVoidMessage          @"Current password is empty."
 #define kNewPswdChangedSuccessMessage       @"Password changed successfully."
 
 //This part in development
@@ -89,8 +90,8 @@
 
 //This part in development
 
-+(void)showAllertAboutDevelopmentPart;
-
++ (void)showAllertAboutDevelopmentPart;
++ (void)showAlertAboutReauiredValue:(NSString *)valueName;
 
 
 

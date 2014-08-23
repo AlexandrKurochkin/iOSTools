@@ -120,4 +120,11 @@
     
 }
 
++ (void)showAlertAboutReauiredValue:(NSString *)valueName {
+    
+    [AlertManager showSimpleAlertWithTitle:kWheninTitle
+                                   message:[NSString stringWithFormat:kValueIsRequiredAndCannotBeEmpty, valueName]
+                         cancelButtonTitle:kOkButton];
+}
+
 @end
