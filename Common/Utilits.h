@@ -38,4 +38,6 @@
 
 @interface Utilits : NSObject
 
++ (NSInteger)ganaratedRandomInteger;
+
 @end

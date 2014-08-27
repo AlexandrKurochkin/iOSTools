@@ -38,6 +38,11 @@
 
 @implementation Utilits
 
++ (NSInteger)ganaratedRandomInteger {
+    int r = arc4random() % 9999;
+    return (NSInteger) r;
+}
+
 @end
 
 
