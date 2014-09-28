@@ -48,6 +48,13 @@
         const char *property_name = property_getName(property);
         const char *property_type = property_getAttributes(property);
         
+        NSString *s = [NSString stringWithUTF8String:property_name];
+        //CRUTCH for fuccking iOS8
+        if ([s isEqual:@"description"] ||
+            [s isEqual:@"debugDescription"]) {
+            continue;
+        }
+        
         switch(property_type[1]) {
             case 'f' : //float
                 break;
