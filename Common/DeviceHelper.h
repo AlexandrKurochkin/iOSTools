@@ -58,3 +58,7 @@
 #define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 #define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 
+#define CURRENT_BUILD_NUMBER                        [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]
+#define CURRENT_APP_VERSION_NUMBER                  [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
+
+#define CURRENT_APP_VERSION_AND_BUILD_NUMBER          [NSString stringWithFormat:@"Version: %@ (%@)", CURRENT_APP_VERSION_NUMBER, CURRENT_BUILD_NUMBER];
