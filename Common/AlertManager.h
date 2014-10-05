@@ -43,6 +43,9 @@
 //Common messages
 #define kNoInternetMessage                  @"No internet connection. Please check your internet settings and try again."
 #define kWrongLengthMessage                 @"Length of %@ should be more than %ld"
+
+#define kEmptyEmailMessage                  @"Email is empty. Please enter your email."
+
 #define kEmailValidatiomMessage             @"Wrong email."
 #define kPhoneValidatiomMessage             @"Wrong phone number."
 #define kValueIsRequiredAndCannotBeEmpty    @"%@ is required and can't be empty."
@@ -92,6 +95,7 @@
 
 + (void)showAllertAboutDevelopmentPart;
 + (void)showAlertAboutReauiredValue:(NSString *)valueName;
++ (void)showAlertAboutEmptyEmail;
 
 
 

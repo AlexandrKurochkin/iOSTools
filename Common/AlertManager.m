@@ -71,6 +71,12 @@
     [AlertManager showSimpleAlertWithTitle:kErrorTitle message:msg cancelButtonTitle:kOkButton];
 }
 
++ (void)showAlertAboutEmptyEmail {
+    [AlertManager showSimpleAlertWithTitle:kWarning
+                                   message:kEmptyEmailMessage
+                         cancelButtonTitle:kOkButton];
+}
+
 
 #pragma mark - Preferences messages
 
