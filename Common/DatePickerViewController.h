@@ -42,6 +42,7 @@ typedef void(^ChosenDateBlock)(UIDatePicker *datePicker);
 @interface DatePickerViewController : UIViewController
 
 @property (nonatomic, weak, readwrite) IBOutlet UIDatePicker *datePicker;
+@property (nonatomic, assign, readwrite) NSUInteger minuteInterval;
 
 - (id)initWithDatePickerMode:(UIDatePickerMode)datePickerMode startDate:(NSDate *)date choosenDateBlock:(ChosenDateBlock)aChoosenDateBlock;
 
