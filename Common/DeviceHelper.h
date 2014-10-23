@@ -48,7 +48,7 @@
 
 
 //Device Type
-
+#define IS_IPAD                                     UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad
 #define IS_IPHONE_5                                 ([[UIScreen mainScreen] bounds].size.height == 568) ? YES: NO
 
 //iOS versions
