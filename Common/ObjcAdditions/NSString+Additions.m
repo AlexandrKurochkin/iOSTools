@@ -123,5 +123,21 @@
     return [urlTest evaluateWithObject:self];
 }
 
+- (NSString *)phoneFormated {
+    NSString *formatted = self;
+    if (self.length == 10) {
+        
+        NSString *firstSubstr = [self substringWithRange:NSMakeRange(0,3)];
+        NSString *secondSubstr = [self substringWithRange:NSMakeRange(3,3)];
+        NSString *thirdSubstr = [self substringWithRange:NSMakeRange(6,4)];
+        
+        formatted = [NSString stringWithFormat: @"(%@) %@-%@", firstSubstr, secondSubstr, thirdSubstr];
+        
+        DLog(@"self: %@ formatted: %@", self, formatted);
+        
+    }
+    return formatted;
+}
+
 
 @end

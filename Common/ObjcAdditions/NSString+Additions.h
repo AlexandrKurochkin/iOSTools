@@ -52,5 +52,6 @@
 - (NSURL *)httpSchemeLink;
 - (NSString *)httpSchemeString;
 - (BOOL)isValidAsURL;
+- (NSString *)phoneFormated;
 
 @end
