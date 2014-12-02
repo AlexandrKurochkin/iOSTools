@@ -58,6 +58,9 @@
 //        NSString *debugErrorMsg = [NSString stringWithFormat:@"code: %d %@", error.code, error.domain];
 //        NSString *errorMsg = [NSString stringWithFormat:@"%@", error.domain];
 //        NSString *errorMsg = [NSString stringWithFormat:@"%@. %@.", error.domain, error.localizedDescription];
+        
+        
+        
         [AlertManager showSimpleAlertWithTitle:error.domain message:error.localizedDescription cancelButtonTitle:kOkButton];
     }
 }
