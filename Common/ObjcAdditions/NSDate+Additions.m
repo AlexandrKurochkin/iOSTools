@@ -83,4 +83,45 @@
     return comparison;
 }
 
+- (NSDate *)dateWithCurrentDate {
+    //gather current calendar
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    //gather date components from date
+    NSDateComponents *currentDateComponents = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit) fromDate:[NSDate date]];
+    
+    NSDateComponents *oldDateComponents = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit) fromDate:self];
+    
+    //set date components
+    currentDateComponents.hour    = oldDateComponents.hour;
+    currentDateComponents.minute  = oldDateComponents.hour;
+
+    //save date relative from date
+    NSDate *returnDate = [calendar dateFromComponents:currentDateComponents];
+    return returnDate;
+}
+
+- (NSInteger)daysToNSDate:(NSDate *)endDate {
+    NSDateComponents *components;
+    NSInteger days;
+    
+    components = [[NSCalendar currentCalendar] components: NSDayCalendarUnit
+                                                 fromDate: self toDate: endDate options: 0];
+    days = [components day];
+    return days;
+}
+
+- (NSDate *)dateWithAddedDays:(NSInteger)addDaysCount {
+    
+    // Create and initialize date component instance
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    [dateComponents setDay:addDaysCount];
+    
+    // Retrieve date with increased days count
+    NSDate *newDate = [[NSCalendar currentCalendar]
+                       dateByAddingComponents:dateComponents
+                       toDate:self options:0];
+    return newDate;
+}
+
 @end

@@ -45,4 +45,8 @@
 - (BOOL)isValideForMinAge:(NSInteger)minAge;
 - (NSComparisonResult)compareWithoutSeconds:(NSDate *)aDate;
 
+- (NSDate *)dateWithCurrentDate;
+- (NSInteger)daysToNSDate:(NSDate *)endDate;
+- (NSDate *)dateWithAddedDays:(NSInteger)addDaysCount;
+
 @end
