@@ -125,7 +125,7 @@
 }
 
 - (NSDate *)dateWithAddedHours:(NSInteger)addHoursCount {
-    return [self dateByAddingTimeInterval:60*60*addHoursCount];
+    return [self dateByAddingTimeInterval:60*60*addHoursCount]; 
 }
 
 @end

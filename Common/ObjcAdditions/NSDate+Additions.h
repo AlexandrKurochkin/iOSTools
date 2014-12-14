@@ -50,4 +50,5 @@
 - (NSDate *)dateWithAddedDays:(NSInteger)addDaysCount;
 - (NSDate *)dateWithAddedHours:(NSInteger)addHoursCount;
 
+
 @end
