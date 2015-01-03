@@ -49,6 +49,7 @@
 #define kEmailValidatiomMessage             @"Wrong email."
 #define kPhoneValidatiomMessage             @"Wrong phone number."
 #define kValueIsRequiredAndCannotBeEmpty    @"%@ is required and can't be empty."
+#define kNoMailConfiguration                @"You have not configured mail settings. Please configure for your mail."
 
 //User data messages
 #define kBirthdayValidationMessage          @"Wrong date of birth. You must be at least %d years old."
@@ -79,6 +80,7 @@
 + (void)showAllertAboutWrongLengthOf:(NSString *)fieldName minLenght:(NSUInteger)minLenght;
 + (void)showAllertAboutWrongEmail;
 + (void)showAllertAboutWrongPhoneNumber;
++ (void)showAllertAboutNotConfigureMailSettings;
 
 /*========= User data alerts =========*/
 + (void)showAllertAboutWrongRadius;

@@ -80,6 +80,9 @@
                          cancelButtonTitle:kOkButton];
 }
 
++ (void)showAllertAboutNotConfigureMailSettings {
+    [WHAlertManager showSimpleAlertWithTitle:kWheninTitle message:kNoMailConfiguration cancelButtonTitle:kOkButton];
+}
 
 #pragma mark - Preferences messages
 

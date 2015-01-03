@@ -62,7 +62,10 @@
     } else {
         ACAccountStore *accountStoreTw = [[ACAccountStore alloc] init];
         ACAccountType *accountTypeTw = [accountStoreTw accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
-        [accountStoreTw requestAccessToAccountsWithType:accountTypeTw options:NULL completion:^(BOOL granted, NSError *error) {
+        [accountStoreTw requestAccessToAccountsWithType:accountTypeTw options:NULL completion:
+         
+         
+         ^(BOOL granted, NSError *error) {
             if(granted) {
                 
                 NSArray *accountsArray = [accountStoreTw accountsWithAccountType:accountTypeTw];
