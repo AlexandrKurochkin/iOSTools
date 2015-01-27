@@ -61,5 +61,16 @@
 //    NSArray *results = [self filteredArrayUsingPredicate:predicate];
 //}
 
+- (NSArray *)arrayWithReplacedObjectAtIndex:(NSInteger)index withObject:(id)obj {
+    NSMutableArray *mArr = [NSMutableArray arrayWithArray:self];
+    [mArr replaceObjectAtIndex:index withObject:obj];
+    return [NSArray arrayWithArray:mArr];
+}
+
+- (NSArray *)arrayWithReplacedObject:(id)sourceObj destinationObject:(id)destinationObject {
+    NSInteger indexOfSourceObj = [self indexOfObject:sourceObj];
+    return [self arrayWithReplacedObjectAtIndex:indexOfSourceObj withObject:destinationObject];
+}
+
 
 @end
