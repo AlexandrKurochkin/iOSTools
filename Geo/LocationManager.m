@@ -100,6 +100,15 @@ static LocationManager *sharedInstance = nil;
     //DLog(@"new current location");
 }
 
+
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray *)locations {
+    
+    self.currentLocationCoordinate = [(CLLocation *) [locations lastObject] coordinate];
+    [manager stopUpdatingLocation];
+    self.isNewCoordinate = YES;
+}
+
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     if (error.code ==  kCLErrorDenied) {
         DLog(@"");
