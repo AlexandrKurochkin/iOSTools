@@ -36,16 +36,77 @@
 
 #import "AlertManager.h"
 
+#define kNoPreviusTime 0
+
+@interface AlertManager ()
+
+@property (nonatomic, strong, readwrite) NSString *previusMessage;
+@property (nonatomic, unsafe_unretained, readwrite) NSTimeInterval previusMessageTime;
+
+
+@end
+
 @implementation AlertManager
+
+@synthesize previusMessage, previusMessageTime;
+
++ (instancetype)sharedInstance {
+    static AlertManager *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [AlertManager new];
+        sharedInstance.previusMessageTime = kNoPreviusTime;
+    });
+    return sharedInstance;
+}
+
+- (BOOL)isShouldShowAlertWithMessage:(NSString *)message {
+    BOOL returnValue = YES;
+
+    
+    NSTimeInterval currentTimeInterval = [NSDate timeIntervalSinceReferenceDate];
+    if ([self.previusMessage isEqualToString:message] &&
+        (currentTimeInterval - self.previusMessageTime) < 1) {
+        returnValue = NO;
+    }
+    
+    self.previusMessage     = message;
+    self.previusMessageTime = currentTimeInterval;
+    
+    return returnValue;
+}
+
+- (void)showAlertWithTitle:(NSString *)title
+                   message:(NSString *)message
+         cancelButtonTitle:(NSString *)cancelButtonTitle {
+    
+    
+    if ([self isShouldShowAlertWithMessage:message]) {
+        [[[UIAlertView alloc] initWithTitle:title
+                                    message:message
+                                   delegate:nil
+                          cancelButtonTitle:cancelButtonTitle
+                          otherButtonTitles:nil] show];
+
+    }
+    
+}
+
+
 
 + (void)showSimpleAlertWithTitle:(NSString *)title
                          message:(NSString *)message
                     cancelButtonTitle:(NSString *)cancelButtonTitle {
-    [[[UIAlertView alloc] initWithTitle:title
-                                 message:message
-                                delegate:nil
-                       cancelButtonTitle:cancelButtonTitle
-                       otherButtonTitles:nil] show];
+    
+    [[AlertManager sharedInstance] showAlertWithTitle:title
+                                              message:message
+                                    cancelButtonTitle:cancelButtonTitle];
+    
+//    [[[UIAlertView alloc] initWithTitle:title
+//                                 message:message
+//                                delegate:nil
+//                       cancelButtonTitle:cancelButtonTitle
+//                       otherButtonTitles:nil] show];
 }
 
 + (void)showAllertForError:(NSError *)error {
