@@ -65,8 +65,10 @@
 
     
     NSTimeInterval currentTimeInterval = [NSDate timeIntervalSinceReferenceDate];
-    if ([self.previusMessage isEqualToString:message] &&
-        (currentTimeInterval - self.previusMessageTime) < 1) {
+    NSTimeInterval difTimeInterval = currentTimeInterval  - self.previusMessageTime;
+    NSLog(@"difTimeInterval: %lf", difTimeInterval);
+    
+    if ([self.previusMessage isEqualToString:message] && difTimeInterval < 2) {
         returnValue = NO;
     }
     
