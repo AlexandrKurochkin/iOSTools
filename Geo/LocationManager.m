@@ -75,7 +75,7 @@ static LocationManager *sharedInstance = nil;
 
 - (void)updateCoordinate {
     [self.locationManager startUpdatingLocation];
-}
+} 
 
 #pragma mark - CLLocationManagerDelegate
 

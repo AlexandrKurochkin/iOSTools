@@ -18,7 +18,7 @@ typedef void(^CoordinateResponse)(CLLocationCoordinate2D coordinate);
     CLLocationManager *_locationManager;
     CLLocationCoordinate2D _currentLocationCoordinate;
 //    NSTimer *_timer;
-    BOOL _isNewCoordinate;
+    BOOL _isNewCoordinate; 
 }
 
 @property (nonatomic, assign, readwrite) CLLocationCoordinate2D currentLocationCoordinate;
