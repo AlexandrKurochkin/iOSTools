@@ -14,7 +14,7 @@
 
 + (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
 
-    int length = [self getLength:textField.text];
+    NSUInteger length = [self getLength:textField.text];
     
     if(length == 10) {
         if(range.length == 0)
@@ -51,14 +51,14 @@
 }
 
 
-+ (int)getLength:(NSString*)mobileNumber {
++ (NSUInteger)getLength:(NSString*)mobileNumber {
     mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"(" withString:@""];
     mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@")" withString:@""];
     mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@" " withString:@""];
     mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"-" withString:@""];
     mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"+" withString:@""];
     
-    int length = [mobileNumber length];
+    NSUInteger length = [mobileNumber length];
     return length;
 }
 

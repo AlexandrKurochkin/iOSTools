@@ -17,6 +17,38 @@
             endingLineNumber = "43"
             landmarkName = "@protocol UIHelperDelegateForKeyboardActionsDataSource"
             landmarkType = "2">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[UIHelperDelegateForKeyboardActions setContentView:]"
+                  moduleName = "iOSToolsDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexk/Documents/Work/%D0%A1ompagnies/Head%20System/Project/iOSTools/iOSTools2/iOSToolsDemo/iOSTools/Common/UIHelperDelegateForKeyboardActions.h"
+                  timestampString = "454869197.536126"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[UIHelperDelegateForKeyboardActions contentView]"
+                  moduleName = "iOSToolsDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexk/Documents/Work/%D0%A1ompagnies/Head%20System/Project/iOSTools/iOSTools2/iOSToolsDemo/iOSTools/Common/UIHelperDelegateForKeyboardActions.h"
+                  timestampString = "454869197.535924"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
