@@ -14,30 +14,29 @@
 		5A3996A91B1C8E45000726E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A3996A81B1C8E45000726E5 /* Images.xcassets */; };
 		5A3996AC1B1C8E45000726E5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A3996AA1B1C8E45000726E5 /* LaunchScreen.xib */; };
 		5A3996B81B1C8E45000726E5 /* iOSToolsDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3996B71B1C8E45000726E5 /* iOSToolsDemoTests.m */; };
-		5A39973C1B1C8EA7000726E5 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 5A39970D1B1C8EA7000726E5 /* README.md */; };
-		5A3997741B1C9D2D000726E5 /* AlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3997441B1C9D2D000726E5 /* AlertManager.m */; };
-		5A3997751B1C9D2D000726E5 /* ITNumberFormating.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3997481B1C9D2D000726E5 /* ITNumberFormating.m */; };
-		5A3997761B1C9D2D000726E5 /* KeyboardListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A39974A1B1C9D2D000726E5 /* KeyboardListener.m */; };
-		5A3997771B1C9D2D000726E5 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A39974D1B1C9D2D000726E5 /* NetworkManager.m */; };
-		5A3997781B1C9D2D000726E5 /* UIHelperDelegateForKeyboardActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A39974F1B1C9D2D000726E5 /* UIHelperDelegateForKeyboardActions.m */; };
-		5A3997791B1C9D2D000726E5 /* Utilits.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3997511B1C9D2D000726E5 /* Utilits.m */; };
-		5A39977A1B1C9D2D000726E5 /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3997541B1C9D2D000726E5 /* NSArray+Additions.m */; };
-		5A39977B1B1C9D2D000726E5 /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3997561B1C9D2D000726E5 /* NSDate+Additions.m */; };
-		5A39977C1B1C9D2D000726E5 /* NSDictionary+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3997581B1C9D2D000726E5 /* NSDictionary+Additions.m */; };
-		5A39977D1B1C9D2D000726E5 /* NSError+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A39975A1B1C9D2D000726E5 /* NSError+Additions.m */; };
-		5A39977E1B1C9D2D000726E5 /* NSObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A39975C1B1C9D2D000726E5 /* NSObject+Additions.m */; };
-		5A39977F1B1C9D2D000726E5 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A39975E1B1C9D2D000726E5 /* NSString+Additions.m */; };
-		5A3997801B1C9D2D000726E5 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3997601B1C9D2D000726E5 /* UIAlertView+Blocks.m */; };
-		5A3997811B1C9D2D000726E5 /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3997621B1C9D2D000726E5 /* UIImage+Additions.m */; };
-		5A3997821B1C9D2D000726E5 /* UILabel+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3997641B1C9D2D000726E5 /* UILabel+Additions.m */; };
-		5A3997831B1C9D2D000726E5 /* UIPopoverController+iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3997661B1C9D2D000726E5 /* UIPopoverController+iPhone.m */; };
-		5A3997841B1C9D2D000726E5 /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3997681B1C9D2D000726E5 /* UIView+Additions.m */; };
-		5A3997851B1C9D2D000726E5 /* UIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A39976A1B1C9D2D000726E5 /* UIViewController+Additions.m */; };
-		5A3997861B1C9D2D000726E5 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A39976D1B1C9D2D000726E5 /* DatePickerViewController.m */; };
-		5A3997871B1C9D2D000726E5 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A39976E1B1C9D2D000726E5 /* DatePickerViewController.xib */; };
-		5A3997881B1C9D2D000726E5 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3997701B1C9D2D000726E5 /* PickerViewController.m */; };
-		5A3997891B1C9D2D000726E5 /* PickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A3997711B1C9D2D000726E5 /* PickerViewController.xib */; };
-		5A39978A1B1C9D2D000726E5 /* PopoverContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3997731B1C9D2D000726E5 /* PopoverContentViewController.m */; };
+		5AEA486D1B1F7B7D00AE16BD /* AlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA483C1B1F7B7D00AE16BD /* AlertManager.m */; };
+		5AEA486E1B1F7B7D00AE16BD /* ITNumberFormating.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA48401B1F7B7D00AE16BD /* ITNumberFormating.m */; };
+		5AEA486F1B1F7B7D00AE16BD /* KeyboardListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA48421B1F7B7D00AE16BD /* KeyboardListener.m */; };
+		5AEA48701B1F7B7D00AE16BD /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA48451B1F7B7D00AE16BD /* NetworkManager.m */; };
+		5AEA48711B1F7B7D00AE16BD /* UIHelperDelegateForKeyboardActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA48471B1F7B7D00AE16BD /* UIHelperDelegateForKeyboardActions.m */; };
+		5AEA48721B1F7B7D00AE16BD /* Utilits.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA48491B1F7B7D00AE16BD /* Utilits.m */; };
+		5AEA48731B1F7B7D00AE16BD /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA484D1B1F7B7D00AE16BD /* NSArray+Additions.m */; };
+		5AEA48741B1F7B7D00AE16BD /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA484F1B1F7B7D00AE16BD /* NSDate+Additions.m */; };
+		5AEA48751B1F7B7D00AE16BD /* NSDictionary+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA48511B1F7B7D00AE16BD /* NSDictionary+Additions.m */; };
+		5AEA48761B1F7B7D00AE16BD /* NSError+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA48531B1F7B7D00AE16BD /* NSError+Additions.m */; };
+		5AEA48771B1F7B7D00AE16BD /* NSObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA48551B1F7B7D00AE16BD /* NSObject+Additions.m */; };
+		5AEA48781B1F7B7D00AE16BD /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA48571B1F7B7D00AE16BD /* NSString+Additions.m */; };
+		5AEA48791B1F7B7D00AE16BD /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA48591B1F7B7D00AE16BD /* UIAlertView+Blocks.m */; };
+		5AEA487A1B1F7B7D00AE16BD /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA485B1B1F7B7D00AE16BD /* UIImage+Additions.m */; };
+		5AEA487B1B1F7B7D00AE16BD /* UILabel+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA485D1B1F7B7D00AE16BD /* UILabel+Additions.m */; };
+		5AEA487C1B1F7B7D00AE16BD /* UIPopoverController+iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA485F1B1F7B7D00AE16BD /* UIPopoverController+iPhone.m */; };
+		5AEA487D1B1F7B7D00AE16BD /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA48611B1F7B7D00AE16BD /* UIView+Additions.m */; };
+		5AEA487E1B1F7B7D00AE16BD /* UIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA48631B1F7B7D00AE16BD /* UIViewController+Additions.m */; };
+		5AEA487F1B1F7B7D00AE16BD /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA48661B1F7B7D00AE16BD /* DatePickerViewController.m */; };
+		5AEA48801B1F7B7D00AE16BD /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AEA48671B1F7B7D00AE16BD /* DatePickerViewController.xib */; };
+		5AEA48811B1F7B7D00AE16BD /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA48691B1F7B7D00AE16BD /* PickerViewController.m */; };
+		5AEA48821B1F7B7D00AE16BD /* PickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AEA486A1B1F7B7D00AE16BD /* PickerViewController.xib */; };
+		5AEA48831B1F7B7D00AE16BD /* PopoverContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA486C1B1F7B7D00AE16BD /* PopoverContentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,55 +63,54 @@
 		5A3996B11B1C8E45000726E5 /* iOSToolsDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSToolsDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A3996B61B1C8E45000726E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A3996B71B1C8E45000726E5 /* iOSToolsDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSToolsDemoTests.m; sourceTree = "<group>"; };
-		5A39970D1B1C8EA7000726E5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		5A3997431B1C9D2D000726E5 /* AlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertManager.h; sourceTree = "<group>"; };
-		5A3997441B1C9D2D000726E5 /* AlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertManager.m; sourceTree = "<group>"; };
-		5A3997451B1C9D2D000726E5 /* ARCHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCHelper.h; sourceTree = "<group>"; };
-		5A3997461B1C9D2D000726E5 /* DeviceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceHelper.h; sourceTree = "<group>"; };
-		5A3997471B1C9D2D000726E5 /* ITNumberFormating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITNumberFormating.h; sourceTree = "<group>"; };
-		5A3997481B1C9D2D000726E5 /* ITNumberFormating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITNumberFormating.m; sourceTree = "<group>"; };
-		5A3997491B1C9D2D000726E5 /* KeyboardListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardListener.h; sourceTree = "<group>"; };
-		5A39974A1B1C9D2D000726E5 /* KeyboardListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardListener.m; sourceTree = "<group>"; };
-		5A39974B1B1C9D2D000726E5 /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
-		5A39974C1B1C9D2D000726E5 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
-		5A39974D1B1C9D2D000726E5 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
-		5A39974E1B1C9D2D000726E5 /* UIHelperDelegateForKeyboardActions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHelperDelegateForKeyboardActions.h; sourceTree = "<group>"; };
-		5A39974F1B1C9D2D000726E5 /* UIHelperDelegateForKeyboardActions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHelperDelegateForKeyboardActions.m; sourceTree = "<group>"; };
-		5A3997501B1C9D2D000726E5 /* Utilits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilits.h; sourceTree = "<group>"; };
-		5A3997511B1C9D2D000726E5 /* Utilits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilits.m; sourceTree = "<group>"; };
-		5A3997531B1C9D2D000726E5 /* NSArray+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Additions.h"; sourceTree = "<group>"; };
-		5A3997541B1C9D2D000726E5 /* NSArray+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Additions.m"; sourceTree = "<group>"; };
-		5A3997551B1C9D2D000726E5 /* NSDate+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Additions.h"; sourceTree = "<group>"; };
-		5A3997561B1C9D2D000726E5 /* NSDate+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Additions.m"; sourceTree = "<group>"; };
-		5A3997571B1C9D2D000726E5 /* NSDictionary+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Additions.h"; sourceTree = "<group>"; };
-		5A3997581B1C9D2D000726E5 /* NSDictionary+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Additions.m"; sourceTree = "<group>"; };
-		5A3997591B1C9D2D000726E5 /* NSError+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Additions.h"; sourceTree = "<group>"; };
-		5A39975A1B1C9D2D000726E5 /* NSError+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Additions.m"; sourceTree = "<group>"; };
-		5A39975B1B1C9D2D000726E5 /* NSObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Additions.h"; sourceTree = "<group>"; };
-		5A39975C1B1C9D2D000726E5 /* NSObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Additions.m"; sourceTree = "<group>"; };
-		5A39975D1B1C9D2D000726E5 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
-		5A39975E1B1C9D2D000726E5 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
-		5A39975F1B1C9D2D000726E5 /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
-		5A3997601B1C9D2D000726E5 /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
-		5A3997611B1C9D2D000726E5 /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
-		5A3997621B1C9D2D000726E5 /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
-		5A3997631B1C9D2D000726E5 /* UILabel+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Additions.h"; sourceTree = "<group>"; };
-		5A3997641B1C9D2D000726E5 /* UILabel+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Additions.m"; sourceTree = "<group>"; };
-		5A3997651B1C9D2D000726E5 /* UIPopoverController+iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPopoverController+iPhone.h"; sourceTree = "<group>"; };
-		5A3997661B1C9D2D000726E5 /* UIPopoverController+iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPopoverController+iPhone.m"; sourceTree = "<group>"; };
-		5A3997671B1C9D2D000726E5 /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
-		5A3997681B1C9D2D000726E5 /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
-		5A3997691B1C9D2D000726E5 /* UIViewController+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Additions.h"; sourceTree = "<group>"; };
-		5A39976A1B1C9D2D000726E5 /* UIViewController+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Additions.m"; sourceTree = "<group>"; };
-		5A39976C1B1C9D2D000726E5 /* DatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerViewController.h; sourceTree = "<group>"; };
-		5A39976D1B1C9D2D000726E5 /* DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerViewController.m; sourceTree = "<group>"; };
-		5A39976E1B1C9D2D000726E5 /* DatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerViewController.xib; sourceTree = "<group>"; };
-		5A39976F1B1C9D2D000726E5 /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
-		5A3997701B1C9D2D000726E5 /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
-		5A3997711B1C9D2D000726E5 /* PickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerViewController.xib; sourceTree = "<group>"; };
-		5A3997721B1C9D2D000726E5 /* PopoverContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverContentViewController.h; sourceTree = "<group>"; };
-		5A3997731B1C9D2D000726E5 /* PopoverContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverContentViewController.m; sourceTree = "<group>"; };
-		5A39978B1B1C9D7E000726E5 /* iOSTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOSTools.h; sourceTree = "<group>"; };
+		5AEA483B1B1F7B7D00AE16BD /* AlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertManager.h; sourceTree = "<group>"; };
+		5AEA483C1B1F7B7D00AE16BD /* AlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertManager.m; sourceTree = "<group>"; };
+		5AEA483D1B1F7B7D00AE16BD /* ARCHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCHelper.h; sourceTree = "<group>"; };
+		5AEA483E1B1F7B7D00AE16BD /* DeviceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceHelper.h; sourceTree = "<group>"; };
+		5AEA483F1B1F7B7D00AE16BD /* ITNumberFormating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITNumberFormating.h; sourceTree = "<group>"; };
+		5AEA48401B1F7B7D00AE16BD /* ITNumberFormating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITNumberFormating.m; sourceTree = "<group>"; };
+		5AEA48411B1F7B7D00AE16BD /* KeyboardListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardListener.h; sourceTree = "<group>"; };
+		5AEA48421B1F7B7D00AE16BD /* KeyboardListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardListener.m; sourceTree = "<group>"; };
+		5AEA48431B1F7B7D00AE16BD /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
+		5AEA48441B1F7B7D00AE16BD /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		5AEA48451B1F7B7D00AE16BD /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		5AEA48461B1F7B7D00AE16BD /* UIHelperDelegateForKeyboardActions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHelperDelegateForKeyboardActions.h; sourceTree = "<group>"; };
+		5AEA48471B1F7B7D00AE16BD /* UIHelperDelegateForKeyboardActions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHelperDelegateForKeyboardActions.m; sourceTree = "<group>"; };
+		5AEA48481B1F7B7D00AE16BD /* Utilits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilits.h; sourceTree = "<group>"; };
+		5AEA48491B1F7B7D00AE16BD /* Utilits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilits.m; sourceTree = "<group>"; };
+		5AEA484A1B1F7B7D00AE16BD /* iOSTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSTools.h; sourceTree = "<group>"; };
+		5AEA484C1B1F7B7D00AE16BD /* NSArray+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Additions.h"; sourceTree = "<group>"; };
+		5AEA484D1B1F7B7D00AE16BD /* NSArray+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Additions.m"; sourceTree = "<group>"; };
+		5AEA484E1B1F7B7D00AE16BD /* NSDate+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Additions.h"; sourceTree = "<group>"; };
+		5AEA484F1B1F7B7D00AE16BD /* NSDate+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Additions.m"; sourceTree = "<group>"; };
+		5AEA48501B1F7B7D00AE16BD /* NSDictionary+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Additions.h"; sourceTree = "<group>"; };
+		5AEA48511B1F7B7D00AE16BD /* NSDictionary+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Additions.m"; sourceTree = "<group>"; };
+		5AEA48521B1F7B7D00AE16BD /* NSError+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Additions.h"; sourceTree = "<group>"; };
+		5AEA48531B1F7B7D00AE16BD /* NSError+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Additions.m"; sourceTree = "<group>"; };
+		5AEA48541B1F7B7D00AE16BD /* NSObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Additions.h"; sourceTree = "<group>"; };
+		5AEA48551B1F7B7D00AE16BD /* NSObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Additions.m"; sourceTree = "<group>"; };
+		5AEA48561B1F7B7D00AE16BD /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+		5AEA48571B1F7B7D00AE16BD /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		5AEA48581B1F7B7D00AE16BD /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
+		5AEA48591B1F7B7D00AE16BD /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
+		5AEA485A1B1F7B7D00AE16BD /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
+		5AEA485B1B1F7B7D00AE16BD /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
+		5AEA485C1B1F7B7D00AE16BD /* UILabel+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Additions.h"; sourceTree = "<group>"; };
+		5AEA485D1B1F7B7D00AE16BD /* UILabel+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Additions.m"; sourceTree = "<group>"; };
+		5AEA485E1B1F7B7D00AE16BD /* UIPopoverController+iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPopoverController+iPhone.h"; sourceTree = "<group>"; };
+		5AEA485F1B1F7B7D00AE16BD /* UIPopoverController+iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPopoverController+iPhone.m"; sourceTree = "<group>"; };
+		5AEA48601B1F7B7D00AE16BD /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
+		5AEA48611B1F7B7D00AE16BD /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
+		5AEA48621B1F7B7D00AE16BD /* UIViewController+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Additions.h"; sourceTree = "<group>"; };
+		5AEA48631B1F7B7D00AE16BD /* UIViewController+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Additions.m"; sourceTree = "<group>"; };
+		5AEA48651B1F7B7D00AE16BD /* DatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerViewController.h; sourceTree = "<group>"; };
+		5AEA48661B1F7B7D00AE16BD /* DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerViewController.m; sourceTree = "<group>"; };
+		5AEA48671B1F7B7D00AE16BD /* DatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerViewController.xib; sourceTree = "<group>"; };
+		5AEA48681B1F7B7D00AE16BD /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
+		5AEA48691B1F7B7D00AE16BD /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
+		5AEA486A1B1F7B7D00AE16BD /* PickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerViewController.xib; sourceTree = "<group>"; };
+		5AEA486B1B1F7B7D00AE16BD /* PopoverContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverContentViewController.h; sourceTree = "<group>"; };
+		5AEA486C1B1F7B7D00AE16BD /* PopoverContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverContentViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +134,7 @@
 		5A39968F1B1C8E45000726E5 = {
 			isa = PBXGroup;
 			children = (
-				5A3996C11B1C8EA7000726E5 /* iOSTools */,
+				5AEA48391B1F7B7D00AE16BD /* iOSTools */,
 				5A39969A1B1C8E45000726E5 /* iOSToolsDemo */,
 				5A3996B41B1C8E45000726E5 /* iOSToolsDemoTests */,
 				5A3996991B1C8E45000726E5 /* Products */,
@@ -193,83 +191,81 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5A3996C11B1C8EA7000726E5 /* iOSTools */ = {
+		5AEA48391B1F7B7D00AE16BD /* iOSTools */ = {
 			isa = PBXGroup;
 			children = (
-				5A3997421B1C9D2D000726E5 /* Common */,
-				5A3997521B1C9D2D000726E5 /* ObjcAdditions */,
-				5A39976B1B1C9D2D000726E5 /* ViewControllers */,
-				5A39970D1B1C8EA7000726E5 /* README.md */,
-				5A39978B1B1C9D7E000726E5 /* iOSTools.h */,
+				5AEA483A1B1F7B7D00AE16BD /* Common */,
+				5AEA484A1B1F7B7D00AE16BD /* iOSTools.h */,
+				5AEA484B1B1F7B7D00AE16BD /* ObjcAdditions */,
+				5AEA48641B1F7B7D00AE16BD /* ViewControllers */,
 			);
-			name = iOSTools;
-			path = iOSToolsDemo/iOSTools;
+			path = iOSTools;
 			sourceTree = "<group>";
 		};
-		5A3997421B1C9D2D000726E5 /* Common */ = {
+		5AEA483A1B1F7B7D00AE16BD /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				5A3997431B1C9D2D000726E5 /* AlertManager.h */,
-				5A3997441B1C9D2D000726E5 /* AlertManager.m */,
-				5A3997451B1C9D2D000726E5 /* ARCHelper.h */,
-				5A3997461B1C9D2D000726E5 /* DeviceHelper.h */,
-				5A3997471B1C9D2D000726E5 /* ITNumberFormating.h */,
-				5A3997481B1C9D2D000726E5 /* ITNumberFormating.m */,
-				5A3997491B1C9D2D000726E5 /* KeyboardListener.h */,
-				5A39974A1B1C9D2D000726E5 /* KeyboardListener.m */,
-				5A39974B1B1C9D2D000726E5 /* Log.h */,
-				5A39974C1B1C9D2D000726E5 /* NetworkManager.h */,
-				5A39974D1B1C9D2D000726E5 /* NetworkManager.m */,
-				5A39974E1B1C9D2D000726E5 /* UIHelperDelegateForKeyboardActions.h */,
-				5A39974F1B1C9D2D000726E5 /* UIHelperDelegateForKeyboardActions.m */,
-				5A3997501B1C9D2D000726E5 /* Utilits.h */,
-				5A3997511B1C9D2D000726E5 /* Utilits.m */,
+				5AEA483B1B1F7B7D00AE16BD /* AlertManager.h */,
+				5AEA483C1B1F7B7D00AE16BD /* AlertManager.m */,
+				5AEA483D1B1F7B7D00AE16BD /* ARCHelper.h */,
+				5AEA483E1B1F7B7D00AE16BD /* DeviceHelper.h */,
+				5AEA483F1B1F7B7D00AE16BD /* ITNumberFormating.h */,
+				5AEA48401B1F7B7D00AE16BD /* ITNumberFormating.m */,
+				5AEA48411B1F7B7D00AE16BD /* KeyboardListener.h */,
+				5AEA48421B1F7B7D00AE16BD /* KeyboardListener.m */,
+				5AEA48431B1F7B7D00AE16BD /* Log.h */,
+				5AEA48441B1F7B7D00AE16BD /* NetworkManager.h */,
+				5AEA48451B1F7B7D00AE16BD /* NetworkManager.m */,
+				5AEA48461B1F7B7D00AE16BD /* UIHelperDelegateForKeyboardActions.h */,
+				5AEA48471B1F7B7D00AE16BD /* UIHelperDelegateForKeyboardActions.m */,
+				5AEA48481B1F7B7D00AE16BD /* Utilits.h */,
+				5AEA48491B1F7B7D00AE16BD /* Utilits.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
 		};
-		5A3997521B1C9D2D000726E5 /* ObjcAdditions */ = {
+		5AEA484B1B1F7B7D00AE16BD /* ObjcAdditions */ = {
 			isa = PBXGroup;
 			children = (
-				5A3997531B1C9D2D000726E5 /* NSArray+Additions.h */,
-				5A3997541B1C9D2D000726E5 /* NSArray+Additions.m */,
-				5A3997551B1C9D2D000726E5 /* NSDate+Additions.h */,
-				5A3997561B1C9D2D000726E5 /* NSDate+Additions.m */,
-				5A3997571B1C9D2D000726E5 /* NSDictionary+Additions.h */,
-				5A3997581B1C9D2D000726E5 /* NSDictionary+Additions.m */,
-				5A3997591B1C9D2D000726E5 /* NSError+Additions.h */,
-				5A39975A1B1C9D2D000726E5 /* NSError+Additions.m */,
-				5A39975B1B1C9D2D000726E5 /* NSObject+Additions.h */,
-				5A39975C1B1C9D2D000726E5 /* NSObject+Additions.m */,
-				5A39975D1B1C9D2D000726E5 /* NSString+Additions.h */,
-				5A39975E1B1C9D2D000726E5 /* NSString+Additions.m */,
-				5A39975F1B1C9D2D000726E5 /* UIAlertView+Blocks.h */,
-				5A3997601B1C9D2D000726E5 /* UIAlertView+Blocks.m */,
-				5A3997611B1C9D2D000726E5 /* UIImage+Additions.h */,
-				5A3997621B1C9D2D000726E5 /* UIImage+Additions.m */,
-				5A3997631B1C9D2D000726E5 /* UILabel+Additions.h */,
-				5A3997641B1C9D2D000726E5 /* UILabel+Additions.m */,
-				5A3997651B1C9D2D000726E5 /* UIPopoverController+iPhone.h */,
-				5A3997661B1C9D2D000726E5 /* UIPopoverController+iPhone.m */,
-				5A3997671B1C9D2D000726E5 /* UIView+Additions.h */,
-				5A3997681B1C9D2D000726E5 /* UIView+Additions.m */,
-				5A3997691B1C9D2D000726E5 /* UIViewController+Additions.h */,
-				5A39976A1B1C9D2D000726E5 /* UIViewController+Additions.m */,
+				5AEA484C1B1F7B7D00AE16BD /* NSArray+Additions.h */,
+				5AEA484D1B1F7B7D00AE16BD /* NSArray+Additions.m */,
+				5AEA484E1B1F7B7D00AE16BD /* NSDate+Additions.h */,
+				5AEA484F1B1F7B7D00AE16BD /* NSDate+Additions.m */,
+				5AEA48501B1F7B7D00AE16BD /* NSDictionary+Additions.h */,
+				5AEA48511B1F7B7D00AE16BD /* NSDictionary+Additions.m */,
+				5AEA48521B1F7B7D00AE16BD /* NSError+Additions.h */,
+				5AEA48531B1F7B7D00AE16BD /* NSError+Additions.m */,
+				5AEA48541B1F7B7D00AE16BD /* NSObject+Additions.h */,
+				5AEA48551B1F7B7D00AE16BD /* NSObject+Additions.m */,
+				5AEA48561B1F7B7D00AE16BD /* NSString+Additions.h */,
+				5AEA48571B1F7B7D00AE16BD /* NSString+Additions.m */,
+				5AEA48581B1F7B7D00AE16BD /* UIAlertView+Blocks.h */,
+				5AEA48591B1F7B7D00AE16BD /* UIAlertView+Blocks.m */,
+				5AEA485A1B1F7B7D00AE16BD /* UIImage+Additions.h */,
+				5AEA485B1B1F7B7D00AE16BD /* UIImage+Additions.m */,
+				5AEA485C1B1F7B7D00AE16BD /* UILabel+Additions.h */,
+				5AEA485D1B1F7B7D00AE16BD /* UILabel+Additions.m */,
+				5AEA485E1B1F7B7D00AE16BD /* UIPopoverController+iPhone.h */,
+				5AEA485F1B1F7B7D00AE16BD /* UIPopoverController+iPhone.m */,
+				5AEA48601B1F7B7D00AE16BD /* UIView+Additions.h */,
+				5AEA48611B1F7B7D00AE16BD /* UIView+Additions.m */,
+				5AEA48621B1F7B7D00AE16BD /* UIViewController+Additions.h */,
+				5AEA48631B1F7B7D00AE16BD /* UIViewController+Additions.m */,
 			);
 			path = ObjcAdditions;
 			sourceTree = "<group>";
 		};
-		5A39976B1B1C9D2D000726E5 /* ViewControllers */ = {
+		5AEA48641B1F7B7D00AE16BD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				5A39976C1B1C9D2D000726E5 /* DatePickerViewController.h */,
-				5A39976D1B1C9D2D000726E5 /* DatePickerViewController.m */,
-				5A39976E1B1C9D2D000726E5 /* DatePickerViewController.xib */,
-				5A39976F1B1C9D2D000726E5 /* PickerViewController.h */,
-				5A3997701B1C9D2D000726E5 /* PickerViewController.m */,
-				5A3997711B1C9D2D000726E5 /* PickerViewController.xib */,
-				5A3997721B1C9D2D000726E5 /* PopoverContentViewController.h */,
-				5A3997731B1C9D2D000726E5 /* PopoverContentViewController.m */,
+				5AEA48651B1F7B7D00AE16BD /* DatePickerViewController.h */,
+				5AEA48661B1F7B7D00AE16BD /* DatePickerViewController.m */,
+				5AEA48671B1F7B7D00AE16BD /* DatePickerViewController.xib */,
+				5AEA48681B1F7B7D00AE16BD /* PickerViewController.h */,
+				5AEA48691B1F7B7D00AE16BD /* PickerViewController.m */,
+				5AEA486A1B1F7B7D00AE16BD /* PickerViewController.xib */,
+				5AEA486B1B1F7B7D00AE16BD /* PopoverContentViewController.h */,
+				5AEA486C1B1F7B7D00AE16BD /* PopoverContentViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -354,10 +350,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A3997871B1C9D2D000726E5 /* DatePickerViewController.xib in Resources */,
+				5AEA48801B1F7B7D00AE16BD /* DatePickerViewController.xib in Resources */,
 				5A3996A71B1C8E45000726E5 /* Main.storyboard in Resources */,
 				5A3996AC1B1C8E45000726E5 /* LaunchScreen.xib in Resources */,
-				5A3997891B1C9D2D000726E5 /* PickerViewController.xib in Resources */,
+				5AEA48821B1F7B7D00AE16BD /* PickerViewController.xib in Resources */,
 				5A3996A91B1C8E45000726E5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,31 +372,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A3997801B1C9D2D000726E5 /* UIAlertView+Blocks.m in Sources */,
-				5A39977E1B1C9D2D000726E5 /* NSObject+Additions.m in Sources */,
-				5A39977F1B1C9D2D000726E5 /* NSString+Additions.m in Sources */,
-				5A3997791B1C9D2D000726E5 /* Utilits.m in Sources */,
-				5A3997861B1C9D2D000726E5 /* DatePickerViewController.m in Sources */,
-				5A3997771B1C9D2D000726E5 /* NetworkManager.m in Sources */,
-				5A39973C1B1C8EA7000726E5 /* README.md in Sources */,
-				5A3997821B1C9D2D000726E5 /* UILabel+Additions.m in Sources */,
-				5A3997751B1C9D2D000726E5 /* ITNumberFormating.m in Sources */,
+				5AEA487F1B1F7B7D00AE16BD /* DatePickerViewController.m in Sources */,
+				5AEA487B1B1F7B7D00AE16BD /* UILabel+Additions.m in Sources */,
+				5AEA48751B1F7B7D00AE16BD /* NSDictionary+Additions.m in Sources */,
+				5AEA486F1B1F7B7D00AE16BD /* KeyboardListener.m in Sources */,
+				5AEA487E1B1F7B7D00AE16BD /* UIViewController+Additions.m in Sources */,
+				5AEA48711B1F7B7D00AE16BD /* UIHelperDelegateForKeyboardActions.m in Sources */,
+				5AEA487A1B1F7B7D00AE16BD /* UIImage+Additions.m in Sources */,
+				5AEA48701B1F7B7D00AE16BD /* NetworkManager.m in Sources */,
+				5AEA486D1B1F7B7D00AE16BD /* AlertManager.m in Sources */,
+				5AEA48741B1F7B7D00AE16BD /* NSDate+Additions.m in Sources */,
+				5AEA487D1B1F7B7D00AE16BD /* UIView+Additions.m in Sources */,
+				5AEA48731B1F7B7D00AE16BD /* NSArray+Additions.m in Sources */,
+				5AEA48721B1F7B7D00AE16BD /* Utilits.m in Sources */,
+				5AEA487C1B1F7B7D00AE16BD /* UIPopoverController+iPhone.m in Sources */,
+				5AEA48831B1F7B7D00AE16BD /* PopoverContentViewController.m in Sources */,
+				5AEA48781B1F7B7D00AE16BD /* NSString+Additions.m in Sources */,
+				5AEA48791B1F7B7D00AE16BD /* UIAlertView+Blocks.m in Sources */,
 				5A3996A41B1C8E45000726E5 /* ViewController.m in Sources */,
-				5A39977D1B1C9D2D000726E5 /* NSError+Additions.m in Sources */,
-				5A3997761B1C9D2D000726E5 /* KeyboardListener.m in Sources */,
-				5A39977B1B1C9D2D000726E5 /* NSDate+Additions.m in Sources */,
-				5A3997841B1C9D2D000726E5 /* UIView+Additions.m in Sources */,
-				5A39977C1B1C9D2D000726E5 /* NSDictionary+Additions.m in Sources */,
-				5A3997781B1C9D2D000726E5 /* UIHelperDelegateForKeyboardActions.m in Sources */,
-				5A3997811B1C9D2D000726E5 /* UIImage+Additions.m in Sources */,
-				5A3997851B1C9D2D000726E5 /* UIViewController+Additions.m in Sources */,
-				5A39978A1B1C9D2D000726E5 /* PopoverContentViewController.m in Sources */,
-				5A39977A1B1C9D2D000726E5 /* NSArray+Additions.m in Sources */,
-				5A3997741B1C9D2D000726E5 /* AlertManager.m in Sources */,
+				5AEA48811B1F7B7D00AE16BD /* PickerViewController.m in Sources */,
 				5A3996A11B1C8E45000726E5 /* AppDelegate.m in Sources */,
-				5A3997831B1C9D2D000726E5 /* UIPopoverController+iPhone.m in Sources */,
-				5A3997881B1C9D2D000726E5 /* PickerViewController.m in Sources */,
 				5A39969E1B1C8E45000726E5 /* main.m in Sources */,
+				5AEA48761B1F7B7D00AE16BD /* NSError+Additions.m in Sources */,
+				5AEA486E1B1F7B7D00AE16BD /* ITNumberFormating.m in Sources */,
+				5AEA48771B1F7B7D00AE16BD /* NSObject+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
